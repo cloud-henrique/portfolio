@@ -1,5 +1,5 @@
 import React from 'react'
-import Document, { DocumentContext, DocumentInitialProps } from 'next/document'
+import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -26,5 +26,21 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal()
     }
+  }
+
+  render(): JSX.Element {
+    return (
+      <Html lang='pt-br'>
+        <Head>
+          <meta charSet='utf-8' />
+          <link href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap' rel='stylesheet' />
+          <link rel='icon' href='https://claudiohenrique.vercel.app/src/assets/img/favicon.png' />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }

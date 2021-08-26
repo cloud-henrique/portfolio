@@ -6,12 +6,12 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    font: 400 16px 'IBM Plex Sans Thai', sans-serif;
   }
 
   body {
-    background: #111312;
-    color: #FAFAFA;
-    
+    background: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
   }
 
 `
