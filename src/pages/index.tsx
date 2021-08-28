@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { Container, TitleContainer, CTAContainer, ButtonPrimary, ButtonSecondary } from '../styles/pages/Home'
+import Button from '../components/Button'
+import { Container, TitleContainer, CTAContainer } from '../styles/pages/Home'
 
 const Home: NextPage = () => {
   return (
@@ -10,7 +11,6 @@ const Home: NextPage = () => {
         <title>Home</title>
       </Head>
       <Container>
-        {/* <main> */}
         <section>
           <TitleContainer>
             <h1>Toda boa ideia merece um bom código,</h1>
@@ -18,11 +18,12 @@ const Home: NextPage = () => {
           </TitleContainer>
 
           <CTAContainer>
-            <ButtonPrimary type='button'>Contato</ButtonPrimary>
-            <ButtonSecondary type='button'>Projetos</ButtonSecondary>
+            <Button href='#contact'>Contato</Button>
+            <Button href='#projects' outline>
+              Projetos
+            </Button>
           </CTAContainer>
         </section>
-        {/* </main> */}
       </Container>
     </>
   )

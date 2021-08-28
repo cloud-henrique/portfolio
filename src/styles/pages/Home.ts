@@ -36,24 +36,3 @@ export const CTAContainer = styled.article`
   justify-content: space-between;
   gap: 3rem;
 `
-
-export const ButtonPrimary = styled.button`
-  width: 100%;
-  padding: 1.6rem 0;
-  background-color: ${theme.colors.secondary};
-  border-radius: 1.2rem;
-  font-size: 2rem;
-  font-weight: 400;
-  border: 0;
-`
-
-export const ButtonSecondary = styled.button`
-  width: 100%;
-  padding: 1.6rem 0;
-  border: 2px solid ${theme.colors.secondary};
-  border-radius: 1.2rem;
-  background-color: transparent;
-  font-size: 2rem;
-  font-weight: 400;
-  color: ${theme.colors.text};
-`
