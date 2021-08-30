@@ -4,6 +4,7 @@ export default createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
+    border: 0;
     box-sizing: border-box;
     font-family:'IBM Plex Sans Thai', sans-serif;
     font-size: 10px;

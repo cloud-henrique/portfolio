@@ -2,6 +2,8 @@ import React from 'react'
 import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
+import Links from './../constants/Links'
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet()
@@ -10,7 +12,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
         })
 
       const initialProps = await Document.getInitialProps(ctx)
@@ -21,7 +23,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
+        )
       }
     } finally {
       sheet.seal()
@@ -32,9 +34,12 @@ export default class MyDocument extends Document {
     return (
       <Html lang='pt-br'>
         <Head>
+          <link rel='canonical' href={Links.homepage} />
           <meta charSet='utf-8' />
-          <link href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap' rel='stylesheet' />
-          <link rel='icon' href='https://claudiohenrique.vercel.app/src/assets/img/favicon.png' />
+          <link
+            href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap'
+            rel='stylesheet'
+          />
         </Head>
         <body>
           <Main />

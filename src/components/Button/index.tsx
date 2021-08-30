@@ -12,16 +12,18 @@ interface ButtonProps {
   outline?: boolean
   rounded?: boolean
   size?: ButtonSizes
+  desktopSize?: ButtonSizes
 }
 
 const Button: React.FC<ButtonProps> = ({
-  children,
+  children = 'Default Button',
   external = false,
   href = '',
   onClick,
   outline = false,
   rounded = false,
   size = ButtonSizes.base,
+  desktopSize = ButtonSizes.md,
   ...rest
 }: ButtonProps) => {
   return (
@@ -29,6 +31,7 @@ const Button: React.FC<ButtonProps> = ({
       {href && (
         <Link href={href} passHref>
           <Container
+            desktopSize={desktopSize}
             href={href}
             outline={outline}
             rel='noopener noreferrer nofollow'

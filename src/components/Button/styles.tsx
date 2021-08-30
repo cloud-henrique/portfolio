@@ -1,10 +1,12 @@
 import styled from 'styled-components'
+import { ButtonSizes } from '../../constants/ButtonSizes'
 import theme from './../../styles/theme'
 
 interface ButtonProps {
   outline?: boolean
   rounded?: boolean
-  size?: number
+  size?: ButtonSizes
+  desktopSize?: ButtonSizes
 }
 
 export const Container = styled.a<ButtonProps>`
@@ -31,5 +33,9 @@ export const Container = styled.a<ButtonProps>`
     background: ${({ outline }) => (outline ? 'transparent' : theme.colors.secondaryDark)};
     border: ${({ outline }) => (outline ? `2px solid ${theme.colors.secondaryDark}` : 'none')};
     color: ${({ outline }) => (outline ? theme.colors.secondaryDark : theme.colors.dark)};
+  }
+
+  @media (min-width: 768px) {
+    height: ${({ desktopSize }) => `${desktopSize}rem`};
   }
 `
