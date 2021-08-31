@@ -2,30 +2,51 @@ import styled from 'styled-components'
 
 import theme from './../../styles/theme'
 
-export const Container = styled.div`
+interface MenuProps {
+  open: boolean
+}
+
+export const Container = styled.header`
+  height: 5.6rem;
+
   display: flex;
-  height: 56px;
-  /* justify-content: flex-end; */
-  /* https://javascript.plainenglish.io/create-your-own-hamburger-menu-using-react-hooks-typescript-and-styled-components-4b2797c4d193 */
-  /* align-items: flex-end; */
-  background-color: ${theme.colors.dark};
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    height: 8rem;
+  }
 `
 
-export const StyledMenu = styled.nav<{ open: boolean }>`
+export const MobileMenu = styled.div`
+  display: flex;
+  @media (min-width: 768px) {
+    display: none;
+  }
+`
+export const DesktopMenu = styled.nav`
+  display: none;
+  height: 100%;
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6.4rem;
+  }
+`
+
+export const StyledMenu = styled.nav<MenuProps>`
   top: 0;
   right: 0;
   height: 100vh;
   width: 75vw;
   position: fixed;
-  background-color: ${theme.colors.primary};
-  /* border: 1px solid #fff; */
+  background-color: ${theme.colors.purpleNavy};
   z-index: 1;
-  padding: 10rem 0;
-  padding: 10vh 2rem;
+  padding: 5.6rem 0;
 
-  flex-direction: column;
   display: ${({ open }) => (open ? 'flex' : 'none')};
-  gap: 4rem;
+  flex-direction: column;
 
   transition: 300ms ease-in-out;
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
@@ -33,22 +54,17 @@ export const StyledMenu = styled.nav<{ open: boolean }>`
 
 export const StyledLink = styled.a`
   text-decoration: none;
-  color: ${theme.colors.dark};
+  color: ${theme.colors.cultured};
   font-size: 2rem;
-  font-weight: 500;
+  /* font-weight: 500; */
+  padding: 2rem;
 
   &:hover {
     transition: 300ms ease-in-out;
     color: ${theme.colors.secondary};
   }
 
-  /* padding: 0 2rem;
-  font-size: 2rem;
-  color: ${theme.colors.light};
-  text-decoration: none;
-
-  &:hover {
-    color: ${theme.colors.primary};
-    cursor: pointer;
-  } */
+  @media (min-width: 768px) {
+    padding: 0;
+  }
 `
