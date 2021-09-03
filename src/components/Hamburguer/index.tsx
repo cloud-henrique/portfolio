@@ -4,6 +4,7 @@ import { Menu, X } from 'react-feather'
 
 import theme from './../../styles/theme'
 
+const { colors, spacing } = theme
 interface HamburguerProps {
   open: boolean
   setOpen: (v: boolean) => void
@@ -11,8 +12,8 @@ interface HamburguerProps {
 
 const StyledHamburguer = styled.button<{ open: boolean }>`
   position: fixed;
-  right: 2rem;
-  top: 1.2rem;
+  right: ${spacing[5]};
+  top: ${spacing[3]};
   padding: 0;
   background: transparent;
   display: flex;
@@ -25,7 +26,7 @@ const StyledHamburguer = styled.button<{ open: boolean }>`
 export const Hamburguer = ({ open, setOpen }: HamburguerProps) => {
   return (
     <StyledHamburguer open={open} onClick={() => setOpen(!open)}>
-      {open ? <X size={32} color={theme.colors.light} /> : <Menu size={32} color={theme.colors.light} />}
+      {open ? <X size={32} color={colors.light} /> : <Menu size={32} color={colors.light} />}
     </StyledHamburguer>
   )
 }

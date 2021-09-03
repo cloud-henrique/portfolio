@@ -1,29 +1,31 @@
 import styled from 'styled-components'
 import theme from './../theme'
 
+const { colors, font, spacing } = theme
+
 export const Container = styled.main`
   width: 100vw;
-  /* height: 100vh; */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 ${spacing[4]};
 `
 
 export const TitleContainer = styled.article`
-  padding: 5.6rem 2.8rem 8rem 2.8rem;
+  padding: ${spacing[16]} ${spacing[12]} ${spacing[20]} ${spacing[12]};
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: ${spacing[8]};
 
   h1 {
-    font-size: 3.6rem;
-    color: ${theme.colors.primary};
+    font-size: ${font[32]};
+    color: ${colors.primary};
     font-weight: 700;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: ${font[20]};
     font-weight: 400;
   }
 `
@@ -33,5 +35,5 @@ export const CTAContainer = styled.article`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 3rem;
+  gap: ${spacing[8]};
 `

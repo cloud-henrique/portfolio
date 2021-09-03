@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+
 import { ButtonSizes } from '../../constants/ButtonSizes'
 import theme from './../../styles/theme'
 
+const { colors, font, spacing } = theme
 interface ButtonProps {
   outline?: boolean
   rounded?: boolean
@@ -11,12 +13,12 @@ interface ButtonProps {
 
 export const Container = styled.a<ButtonProps>`
   width: 100%;
-  height: ${({ size }) => `${size}rem`};
+  height: ${({ size }) => `${size}px`};
 
-  padding: 0 3.2rem;
-  border-radius: ${({ rounded }) => (rounded ? '999px' : '1.2rem')};
-  background: ${({ outline }) => (outline ? 'transparent' : theme.colors.secondary)};
-  border: ${({ outline }) => (outline ? `2px solid ${theme.colors.secondary}` : 'none')};
+  padding: 0 ${spacing[8]};
+  border-radius: ${({ rounded }) => (rounded ? '999px' : spacing[3])};
+  background: ${({ outline }) => (outline ? 'transparent' : colors.secondary)};
+  border: ${({ outline }) => (outline ? `2px solid ${colors.secondary}` : 'none')};
 
   display: flex;
   align-items: center;
@@ -24,18 +26,18 @@ export const Container = styled.a<ButtonProps>`
   text-decoration: none;
   cursor: pointer;
 
-  font-size: 2rem;
+  font-size: ${font[20]};
   font-weight: 400;
-  color: ${({ outline }) => (outline ? theme.colors.secondary : theme.colors.dark)};
+  color: ${({ outline }) => (outline ? colors.secondary : colors.dark)};
 
   &:hover {
     transition: 300ms ease-in-out;
-    background: ${({ outline }) => (outline ? 'transparent' : theme.colors.secondaryDark)};
-    border: ${({ outline }) => (outline ? `2px solid ${theme.colors.secondaryDark}` : 'none')};
-    color: ${({ outline }) => (outline ? theme.colors.secondaryDark : theme.colors.dark)};
+    background: ${({ outline }) => (outline ? 'transparent' : colors.secondaryDark)};
+    border: ${({ outline }) => (outline ? `2px solid ${colors.secondaryDark}` : 'none')};
+    color: ${({ outline }) => (outline ? colors.secondaryDark : colors.dark)};
   }
 
   @media (min-width: 768px) {
-    height: ${({ desktopSize }) => `${desktopSize}rem`};
+    height: ${({ desktopSize }) => `${desktopSize}px`};
   }
 `
