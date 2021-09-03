@@ -7,7 +7,7 @@ export default createGlobalStyle`
     border: 0;
     box-sizing: border-box;
     font-family:'IBM Plex Sans Thai', sans-serif;
-    font-size: 10px;
+    font-size: 16px;
     line-height: 120%;
   }
   
