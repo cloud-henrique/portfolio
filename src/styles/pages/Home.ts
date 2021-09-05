@@ -6,26 +6,24 @@ const { colors, font, spacing, breakpoints } = theme;
 
 export const Container = styled.main`
   width: 100vw;
-  height: calc(100vh - ${spacing[14]});
 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 ${spacing[4]};
 
-  @media screen and (min-width: ${breakpoints.md}) {
-    width: 100vw;
-    height: calc(100vh - ${spacing[20]});
+  @media screen and (min-width: ${breakpoints.desktop}) {
     padding: 0 calc((100vw - 1266px) / 2);
   }
 `;
 
-export const Hero = styled.section`
+export const HomeContainer = styled.section`
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
   gap: ${spacing[32]};
+  height: calc(100vh - ${spacing[14]});
 
   @media screen and (min-width: ${breakpoints.md}) {
     flex-direction: row;
@@ -100,5 +98,17 @@ export const HeroRight = styled.article`
     display: flex;
     align-items: center;
     justify-content: center;
+    background: no-repeat center/80% url('/waves.svg');
+    height: 100%;
   }
 `;
+
+export const AboutContainer = styled.section`
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+`;
+
+export const AboutLeft = styled.article``;
+export const AboutRight = styled.article``;

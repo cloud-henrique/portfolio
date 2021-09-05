@@ -1,15 +1,27 @@
+import React from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 
 import Button from '../components/Button';
 import { ButtonSizes } from '../constants/ButtonSizes';
-import { Container, Hero, HeroLeft, HeroRight, TitleContainer, CTAContainer } from '../styles/pages/Home';
-import heroImg from './../assets/img/hero.svg';
+import trianglesImg from './../assets/img/triangles.svg';
+import wavesImg from './../assets/img/waves.svg';
+import avatarImg from './../assets/img/avatar.png';
+import {
+  Container,
+  HomeContainer,
+  HeroLeft,
+  TitleContainer,
+  CTAContainer,
+  HeroRight,
+  AboutContainer,
+  AboutLeft,
+} from '../styles/pages/Home';
 
 const Home: NextPage = () => {
-  const HeroSection = () => (
-    <Hero>
+  const Home = () => (
+    <HomeContainer>
       <HeroLeft>
         <TitleContainer>
           <h1>Toda boa ideia merece um bom código,</h1>
@@ -26,9 +38,17 @@ const Home: NextPage = () => {
         </CTAContainer>
       </HeroLeft>
       <HeroRight>
-        <Image alt='abstract minimalist illustration' src={heroImg} width='443' height='607' />
+        <Image alt='abstract minimalist illustration' src={trianglesImg} width='300' height='244' />
       </HeroRight>
-    </Hero>
+    </HomeContainer>
+  );
+
+  const About = () => (
+    <AboutContainer>
+      <AboutLeft>
+        <Image alt='Homem pardo de óculos e barba, sorrindo para a frente' src={avatarImg} width='150' height='150' />
+      </AboutLeft>
+    </AboutContainer>
   );
 
   return (
@@ -38,7 +58,9 @@ const Home: NextPage = () => {
       </Head>
 
       <Container>
-        <HeroSection />
+        <Home />
+
+        <About />
       </Container>
     </>
   );
