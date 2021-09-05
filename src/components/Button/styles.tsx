@@ -1,14 +1,14 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import { ButtonSizes } from '../../constants/ButtonSizes'
-import theme from './../../styles/theme'
+import { ButtonSizes } from '../../constants/ButtonSizes';
+import theme from './../../styles/theme';
 
-const { colors, font, spacing } = theme
+const { colors, font, spacing, breakpoints } = theme;
 interface ButtonProps {
-  outline?: boolean
-  rounded?: boolean
-  size?: ButtonSizes
-  desktopSize?: ButtonSizes
+  outline?: boolean;
+  rounded?: boolean;
+  size?: ButtonSizes;
+  desktopSize?: ButtonSizes;
 }
 
 export const Container = styled.a<ButtonProps>`
@@ -37,7 +37,7 @@ export const Container = styled.a<ButtonProps>`
     color: ${({ outline }) => (outline ? colors.secondaryDark : colors.dark)};
   }
 
-  @media (min-width: 768px) {
+  @media screen and (min-width: ${breakpoints.md}) {
     height: ${({ desktopSize }) => `${desktopSize}px`};
   }
-`
+`;

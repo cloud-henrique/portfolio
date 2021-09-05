@@ -1,8 +1,13 @@
 const theme = {
   colors: {
     primary: '#DABFFF',
+    primaryDark: '#4F518C',
+
     secondary: '#7FDEFF',
     secondaryDark: '#1FC7FF',
+
+    dark: '#2C2A4A',
+    light: '#FAFAFA',
 
     cultured: '#FAFAFA',
     babyBlue: '#7FDEFF',
@@ -11,9 +16,6 @@ const theme = {
     mediumPurple: '#907AD6',
     purpleNavy: '#4F518C',
     spaceCadet: '#2C2A4A',
-
-    dark: '#2C2A4A',
-    light: '#FAFAFA',
 
     black: '#000000',
     white: '#FFFFFF',
@@ -38,7 +40,7 @@ const theme = {
     lg: '1024px',
     xl: '1280px',
     desktop: '1366px',
-    '2xl': '1536px',
+    wide: '1536px',
   },
   spacing: {
     0: '0rem', // 0px
@@ -62,6 +64,6 @@ const theme = {
     56: '14rem', // 224px
     64: '16rem', // 256px
   },
-}
+};
 
-export default theme
+export default theme;
