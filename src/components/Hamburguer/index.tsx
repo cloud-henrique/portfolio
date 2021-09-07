@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import { Menu, X } from 'react-feather'
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Menu, X } from 'react-feather';
 
-import theme from './../../styles/theme'
+import theme from './../../styles/theme';
 
-const { colors, spacing } = theme
+const { colors, spacing } = theme;
 interface HamburguerProps {
-  open: boolean
-  setOpen: (v: boolean) => void
+  open: boolean;
+  setOpen: (v: boolean) => void;
 }
 
 const StyledHamburguer = styled.button<{ open: boolean }>`
@@ -20,13 +20,13 @@ const StyledHamburguer = styled.button<{ open: boolean }>`
   flex-direction: column;
   justify-content: space-around;
   cursor: pointer;
-  z-index: 2;
-`
+  z-index: 3;
+`;
 
 export const Hamburguer = ({ open, setOpen }: HamburguerProps) => {
   return (
     <StyledHamburguer open={open} onClick={() => setOpen(!open)}>
       {open ? <X size={32} color={colors.light} /> : <Menu size={32} color={colors.light} />}
     </StyledHamburguer>
-  )
-}
+  );
+};

@@ -64,6 +64,6 @@ const theme = {
     56: '14rem', // 224px
     64: '16rem', // 256px
   },
-};
+}
 
-export default theme;
+export default theme
