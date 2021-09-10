@@ -9,14 +9,6 @@ const theme = {
     dark: '#2C2A4A',
     light: '#FAFAFA',
 
-    cultured: '#FAFAFA',
-    babyBlue: '#7FDEFF',
-    vividSkyBlue: '#1FC7FF',
-    mauve: '#DABFFF',
-    mediumPurple: '#907AD6',
-    purpleNavy: '#4F518C',
-    spaceCadet: '#2C2A4A',
-
     black: '#000000',
     white: '#FFFFFF',
   },

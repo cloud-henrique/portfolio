@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 import theme from './../theme'
@@ -15,7 +16,7 @@ export const Container = styled.main`
   flex-direction: column;
   align-items: center;
   padding: 0 ${spacing[5]};
-  gap: ${spacing[16]};
+  gap: ${spacing[20]};
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     padding: 0 calc((100vw - 1266px) / 2);
@@ -28,7 +29,6 @@ export const HomeContainer = styled.section`
   flex-direction: column;
   justify-content: space-between;
   gap: ${spacing[32]};
-  /* height: calc(100vh - ${spacing[14]}); */
 
   @media screen and (min-width: ${breakpoints.md}) {
     flex-direction: row;
@@ -57,13 +57,11 @@ export const HeroLeft = styled.article`
 
 export const TitleContainer = styled.article<HomeProps>`
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: ${({ textCenter }) => (textCenter ? 'center' : 'left')};
   gap: ${spacing[6]};
   max-width: 80vw;
-  /* border: 1px solid #faf; */
 
   h1,
   h2 {
@@ -125,8 +123,7 @@ export const AboutContainer = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: ${spacing[16]} 0;
-  gap: ${spacing[16]};
+  gap: ${spacing[8]};
 `
 
 export const AboutLeft = styled.article``
@@ -136,7 +133,7 @@ export const AboutRight = styled.article`
   gap: ${spacing[10]};
 `
 
-export const TextContainer = styled.div`
+export const TextContainer = styled.div<HomeProps>`
   display: flex;
   flex-direction: column;
   gap: ${spacing[6]};
@@ -148,4 +145,53 @@ export const TextContainer = styled.div`
 
 export const ProjectsContainer = styled.section`
   width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: ${spacing[10]};
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    gap: ${spacing[10]};
+  }
+`
+
+export const ProjectContainer = styled.article`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: ${spacing[3]};
+`
+
+export const ProjectPreview = styled.div`
+  width: 320px;
+  height: 180px;
+  border-radius: ${spacing[2]};
+  background-color: ${colors.primary};
+`
+
+export const ProjectContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing[3]};
+`
+
+export const ProjectTitle = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    color: ${colors.secondary};
+    font-size: ${font[18]};
+    font-weight: 600;
+  }
+`
+
+export const ProjectDescription = styled.p`
+  font-size: ${font[14]};
 `

@@ -2,8 +2,9 @@ import React from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { ChevronsDown } from 'react-feather'
+import { ChevronsDown, ExternalLink } from 'react-feather'
 
+import Links from './../constants/Links'
 import theme from './../styles/theme'
 import Button from '../components/Button'
 import { ButtonSizes } from '../constants/ButtonSizes'
@@ -22,6 +23,11 @@ import {
   AboutRight,
   TextContainer,
   ProjectsContainer,
+  ProjectContainer,
+  ProjectPreview,
+  ProjectContent,
+  ProjectTitle,
+  ProjectDescription,
 } from '../styles/pages/Home'
 
 const Home: NextPage = () => {
@@ -47,7 +53,7 @@ const Home: NextPage = () => {
       <HeroRight>
         <Image alt='abstract minimalist illustration' src={trianglesImg} width='300' height='244' />
       </HeroRight>
-      <ChevronsDown color={colors.light} />
+      {/* <ChevronsDown color={colors.light} /> */}
     </HomeContainer>
   )
 
@@ -83,18 +89,30 @@ const Home: NextPage = () => {
     </AboutContainer>
   )
 
-  const Projects = () => (
-    <ProjectsContainer>
-      <TitleContainer>
-        <h2>Meus Projetos</h2>
-      </TitleContainer>
-      <TextContainer>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores laudantium doloremque consequatur. Vitae
-        itaque harum magnam deleniti quam eius esse labore earum necessitatibus inventore. Aperiam, dolorem. Quidem
-        eveniet quo consectetur!
-      </TextContainer>
-    </ProjectsContainer>
-  )
+  const Projects = () => {
+    const { projects } = Links
+    return (
+      <ProjectsContainer>
+        <TitleContainer>
+          <h2>Meus Projetos</h2>
+        </TitleContainer>
+        <ul>
+          {projects.map(project => (
+            <ProjectContainer key={project.key}>
+              <ProjectPreview></ProjectPreview>
+              <ProjectContent>
+                <ProjectTitle>
+                  <p>{project.title}</p>
+                  <ExternalLink size={24} color={colors.secondary} />
+                </ProjectTitle>
+                <ProjectDescription>{project.description}</ProjectDescription>
+              </ProjectContent>
+            </ProjectContainer>
+          ))}
+        </ul>
+      </ProjectsContainer>
+    )
+  }
 
   return (
     <>
