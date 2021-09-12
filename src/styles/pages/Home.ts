@@ -6,6 +6,7 @@ const { colors, font, spacing, breakpoints } = theme
 
 interface HomeProps {
   textCenter?: boolean
+  growOnDesktop?: boolean
 }
 
 export const Container = styled.main`
@@ -133,7 +134,6 @@ export const AboutContainer = styled.section`
 export const AboutLeft = styled.article`
   @media screen and (min-width: ${breakpoints.desktop}) {
     width: 50%;
-    /* border: 1px solid #fff; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,6 +159,13 @@ export const TextContainer = styled.div<HomeProps>`
 
   p {
     line-height: 150%;
+  }
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    p,
+    p > * {
+      font-size: ${({ growOnDesktop }) => (growOnDesktop ? '24px' : '16px')};
+    }
   }
 `
 
@@ -302,7 +309,7 @@ export const ExperienceMedia = styled.a`
     border: 1px solid ${`${colors.light}20`};
 
     &:hover {
-      transition: all 0.5s ease-in-out;
+      transition: all 300ms ease-in-out;
       opacity: 0.6;
     }
   }
@@ -313,5 +320,105 @@ export const StyledImage = styled(Image)`
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     border-radius: ${spacing[3]};
+  }
+`
+
+export const ContactContainer = styled.section`
+  width: 100%;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing[10]};
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    gap: 0;
+    height: 100vh;
+  }
+`
+
+export const ContactBody = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${spacing[6]};
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    flex-direction: row;
+    gap: 0;
+    padding: ${spacing[8]};
+    justify-content: space-between;
+  }
+`
+
+export const ContactForm = styled.form`
+  width: 100%;
+
+  padding: ${spacing[6]};
+  border: 1px solid ${colors.light};
+  border-radius: ${spacing[3]};
+
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing[5]};
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    border-radius: ${spacing[4]};
+    width: 50%;
+  }
+`
+
+export const ContactLabel = styled.label`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing[2]};
+
+  input,
+  textarea {
+    border-radius: ${spacing[2]};
+    padding: ${spacing[2]};
+  }
+
+  input {
+    height: ${spacing[10]};
+  }
+
+  textarea {
+    resize: none;
+  }
+`
+
+export const ContactFooter = styled.footer`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing[10]};
+  align-items: center;
+  justify-content: center;
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: ${spacing[6]};
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: ${colors.primary};
+    padding: ${spacing[4]};
+    border-radius: 50%;
+
+    &:hover {
+      transition: 300ms ease-in-out;
+      opacity: 0.6;
+    }
+  }
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    height: 100vh;
+    gap: ${spacing[6]};
+    nav {
+      gap: ${spacing[16]};
+    }
   }
 `

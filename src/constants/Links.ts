@@ -1,6 +1,9 @@
+import React from 'react'
+
 import monitorandoImg from './../assets/img/projects/monitorando.png'
 import lyricsImg from './../assets/img/projects/lyrics-search.png'
 import techflixImg from './../assets/img/projects/techflix.png'
+import { GitHub, Linkedin, Send, Mail } from 'react-feather'
 
 const Links = {
   homepage: 'https://claudiohenrique.vercel.app',

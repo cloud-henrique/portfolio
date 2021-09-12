@@ -2,7 +2,7 @@ import React from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { ChevronsDown, ExternalLink } from 'react-feather'
+import { ExternalLink, GitHub, Linkedin, Send, Mail } from 'react-feather'
 
 import Links from './../constants/Links'
 import Jobs from '../constants/Jobs'
@@ -35,10 +35,15 @@ import {
   ExperienceContent,
   ExperienceMedia,
   StyledImage,
+  ContactContainer,
+  ContactBody,
+  ContactForm,
+  ContactFooter,
+  ContactLabel,
 } from '../styles/pages/Home'
 
 const Home: NextPage = () => {
-  const { colors } = theme
+  const { colors, spacing } = theme
 
   const Home = () => (
     <HomeContainer>
@@ -140,6 +145,77 @@ const Home: NextPage = () => {
     </ExperiencesContainer>
   )
 
+  const Contact = () => (
+    <ContactContainer>
+      <TitleContainer>
+        <h2>Contato</h2>
+      </TitleContainer>
+
+      <ContactBody>
+        <TextContainer growOnDesktop>
+          <p>
+            Este é o meu primeiro ano desenvolvendo soluções tecnológicas.
+            <br />
+            Dê um voto de confiança e entre em contato comigo para conversarmos!
+          </p>
+          <p>
+            <b>Preencha os detalhes e entrarei em contato assim que possível.</b>
+          </p>
+        </TextContainer>
+        <ContactForm>
+          <ContactLabel htmlFor='name'>
+            <p>Seu nome</p>
+            <input required id='name' type='text' placeholder='Insira seu nome aqui' />
+          </ContactLabel>
+          <ContactLabel htmlFor='email'>
+            <p>Seu e-mail</p>
+            <input required id='email' type='email' placeholder='Insira seu e-mail aqui' />
+          </ContactLabel>
+          <ContactLabel htmlFor='message'>
+            <p>Mensagem</p>
+            <textarea rows={5} required id='message' placeholder='Insira sua mensagem aqui...' />
+          </ContactLabel>
+          <Button href='#projects'>Enviar mensagem</Button>
+        </ContactForm>
+      </ContactBody>
+
+      <ContactFooter>
+        <TextContainer growOnDesktop>
+          <p>Ou você pode me acompanhar por aqui também:</p>
+        </TextContainer>
+        <nav>
+          <a
+            href='https://github.com/claudiohenrique-dev'
+            title='Veja meus códigos no GitHub'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <GitHub size={spacing[8]} color={colors.dark} />
+          </a>
+          <a
+            href='https://linkedin.com/in/claudiohenrique-dev'
+            title='Conectar no LinkedIn'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Linkedin size={spacing[8]} color={colors.dark} />
+          </a>
+          <a
+            href='https://t.me/claudiohenrique_dev'
+            title='Conversar no Telegram'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <Send size={spacing[8]} color={colors.dark} />
+          </a>
+          <a href='mailto:00claudio.henrique@gmail.com' title='Enviar e-mail' target='_blank' rel='noopener noreferrer'>
+            <Mail size={spacing[8]} color={colors.dark} />
+          </a>
+        </nav>
+      </ContactFooter>
+    </ContactContainer>
+  )
+
   return (
     <>
       <Head>
@@ -154,6 +230,8 @@ const Home: NextPage = () => {
         <Projects />
 
         <Experiences />
+
+        <Contact />
       </Container>
     </>
   )

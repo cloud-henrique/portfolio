@@ -5,7 +5,7 @@ const Jobs = [
     company: 'LabCinco',
     href: 'https://labcinco.com',
     description:
-      'Durante 7 meses, desenvolvi funcionalidades e dei manutenção de aplicativos web e mobile usando JavaScript (Vue.js, ReactJS e React Native) em uma startup de tecnologia do Sudeste de Minas Gerais que tem como principal produto uma plataforma de delivery.',
+      'Durante 7 meses, desenvolvi funcionalidades e dei manutenção em aplicativos web e mobile usando JavaScript (Vue.js, ReactJS e React Native) em uma startup de tecnologia do Sudeste de Minas Gerais que tem como principal produto uma plataforma de delivery.',
     media: 'https://labcinco.com/default-logo.png',
   },
   {
