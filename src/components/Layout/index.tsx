@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-import Header from '../Header'
 import { Menu } from '../Menu'
 import { Container, MainContainer } from './styles'
 
@@ -13,7 +12,6 @@ const Layout: React.FC = props => {
 
   return (
     <Container>
-      {/* <Header handleToggleMenu={() => toggleMenu()} isMenuOpen={isMenuOpen} /> */}
       <Menu />
 
       <MainContainer>{props.children}</MainContainer>

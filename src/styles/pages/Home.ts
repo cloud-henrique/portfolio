@@ -149,17 +149,18 @@ export const ProjectsContainer = styled.section`
   justify-content: center;
   flex-direction: column;
   gap: ${spacing[10]};
-
-  ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: ${spacing[10]};
-  }
 `
 export const ProjectsList = styled.ul`
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: ${spacing[10]};
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    justify-content: flex-start;
+    gap: ${spacing[24]};
+  }
 `
 
 export const ProjectContainer = styled.article`
@@ -171,8 +172,6 @@ export const ProjectContainer = styled.article`
 `
 
 export const ProjectPreview = styled.div`
-  /* width: 350px;
-  height: 197.05px; */
   width: 100%;
   height: 100%;
   border-radius: ${spacing[2]};

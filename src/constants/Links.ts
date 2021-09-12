@@ -4,6 +4,12 @@ import media3 from './../../public/static/img/techflix.png'
 
 const Links = {
   homepage: 'https://claudiohenrique.vercel.app',
+  internal: [
+    { key: 0, name: 'Sobre', href: '#about' },
+    { key: 1, name: 'Projetos', href: '#projects' },
+    { key: 2, name: 'Experiências', href: '#experiences' },
+    { key: 3, name: 'Contato', href: '#contact' },
+  ],
   projects: [
     {
       key: 0,
@@ -29,12 +35,6 @@ const Links = {
       href: 'https://techflix.01ch01.vercel.app',
       media: media3,
     },
-  ],
-  internal: [
-    { key: 0, name: 'Sobre', href: '#about' },
-    { key: 1, name: 'Projetos', href: '#projects' },
-    { key: 2, name: 'Experiências', href: '#experiences' },
-    { key: 3, name: 'Contato', href: '#contact' },
   ],
 }
 

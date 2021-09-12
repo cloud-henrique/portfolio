@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import theme from './../../styles/theme';
+import theme from './../../styles/theme'
 
-const { colors, font, spacing, breakpoints } = theme;
+const { colors, font, spacing, breakpoints } = theme
 interface MenuProps {
-  open: boolean;
+  open: boolean
 }
 
 export const Container = styled.header`
@@ -22,7 +22,7 @@ export const Container = styled.header`
     width: 100vw;
     padding: 0 calc((100vw - 1266px) / 2);
   }
-`;
+`
 
 export const MobileMenu = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ export const MobileMenu = styled.div`
   @media screen and (min-width: ${breakpoints.md}) {
     display: none;
   }
-`;
+`
 export const DesktopMenu = styled.nav`
   display: none;
   height: 100%;
@@ -41,7 +41,7 @@ export const DesktopMenu = styled.nav`
     justify-content: center;
     gap: ${spacing[16]};
   }
-`;
+`
 
 export const StyledMenu = styled.nav<MenuProps>`
   top: 0;
@@ -58,13 +58,12 @@ export const StyledMenu = styled.nav<MenuProps>`
 
   transition: 300ms ease-in-out;
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
-`;
+`
 
 export const StyledLink = styled.a`
   text-decoration: none;
   color: ${colors.light};
   font-size: ${font[20]};
-  /* font-weight: 500; */
   padding: ${spacing[5]};
 
   &:hover {
@@ -75,4 +74,4 @@ export const StyledLink = styled.a`
   @media screen and (min-width: ${breakpoints.md}) {
     padding: 0;
   }
-`;
+`
