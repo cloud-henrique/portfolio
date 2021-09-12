@@ -1,3 +1,7 @@
+import media1 from './../../public/static/img/monitorando.png'
+import media2 from './../../public/static/img/lyrics-search.png'
+import media3 from './../../public/static/img/techflix.png'
+
 const Links = {
   homepage: 'https://claudiohenrique.vercel.app',
   projects: [
@@ -7,6 +11,7 @@ const Links = {
       description:
         'Rede Colaborativa de Monitoria Digital e Troca de Conhecimentos.\n [MVP de um Hackathon da faculdade.]',
       href: 'https://claudiohenrique-dev.github.io/monitorando',
+      media: media1,
     },
     {
       key: 1,
@@ -14,6 +19,7 @@ const Links = {
       description:
         'Deseja cantar sua música favorita com seu artistas favorito? Confira!\n [Site para achar letras de músicas consumindo uma API externa.]',
       href: 'https://claudiohenrique-dev.github.io/lyrics-search',
+      media: media2,
     },
     {
       key: 2,
@@ -21,6 +27,7 @@ const Links = {
       description:
         'Plataforma de vídeos recomendados para iniciantes em programação ou entusiastas de tecnologias, estilo Netflix.',
       href: 'https://techflix.01ch01.vercel.app',
+      media: media3,
     },
   ],
   internal: [

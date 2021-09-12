@@ -28,6 +28,7 @@ import {
   ProjectContent,
   ProjectTitle,
   ProjectDescription,
+  ProjectsList,
 } from '../styles/pages/Home'
 
 const Home: NextPage = () => {
@@ -96,10 +97,12 @@ const Home: NextPage = () => {
         <TitleContainer>
           <h2>Meus Projetos</h2>
         </TitleContainer>
-        <ul>
+        <ProjectsList>
           {projects.map(project => (
             <ProjectContainer key={project.key}>
-              <ProjectPreview></ProjectPreview>
+              <ProjectPreview>
+                <Image src={project.media} alt={`Projeto ${project.title}`} width={350} height={197.05} />
+              </ProjectPreview>
               <ProjectContent>
                 <ProjectTitle>
                   <p>{project.title}</p>
@@ -109,7 +112,7 @@ const Home: NextPage = () => {
               </ProjectContent>
             </ProjectContainer>
           ))}
-        </ul>
+        </ProjectsList>
       </ProjectsContainer>
     )
   }

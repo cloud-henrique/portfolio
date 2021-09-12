@@ -155,9 +155,11 @@ export const ProjectsContainer = styled.section`
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     gap: ${spacing[10]};
   }
+`
+export const ProjectsList = styled.ul`
+  display: flex;
 `
 
 export const ProjectContainer = styled.article`
@@ -165,13 +167,19 @@ export const ProjectContainer = styled.article`
   align-items: center;
   flex-direction: column;
   gap: ${spacing[3]};
+  width: 350px;
 `
 
 export const ProjectPreview = styled.div`
-  width: 320px;
-  height: 180px;
+  /* width: 350px;
+  height: 197.05px; */
+  width: 100%;
+  height: 100%;
   border-radius: ${spacing[2]};
   background-color: ${colors.primary};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const ProjectContent = styled.div`
