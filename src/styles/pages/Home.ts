@@ -193,7 +193,7 @@ export const ProjectTitle = styled.span`
   justify-content: space-between;
 
   p {
-    color: ${colors.secondary};
+    color: ${colors.primary};
     font-size: ${font[18]};
     font-weight: 600;
   }

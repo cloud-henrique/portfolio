@@ -1,12 +1,11 @@
 const theme = {
   colors: {
-    primary: '#DABFFF',
-    primaryDark: '#4F518C',
+    primary: '#FEE715',
+    primaryDark: 'rgba(254, 231, 21, 0.6);',
 
-    secondary: '#7FDEFF',
-    secondaryDark: '#1FC7FF',
+    secondary: '#262D34',
 
-    dark: '#2C2A4A',
+    dark: '#111312',
     light: '#FAFAFA',
 
     black: '#000000',

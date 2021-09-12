@@ -49,7 +49,7 @@ export const StyledMenu = styled.nav<MenuProps>`
   height: 100vh;
   width: 75vw;
   position: fixed;
-  background-color: ${colors.primaryDark};
+  background-color: ${colors.secondary};
   z-index: 1;
   padding: ${spacing[14]} 0;
 
@@ -62,16 +62,17 @@ export const StyledMenu = styled.nav<MenuProps>`
 
 export const StyledLink = styled.a`
   text-decoration: none;
-  color: ${colors.light};
+  color: ${colors.primary};
   font-size: ${font[20]};
   padding: ${spacing[5]};
 
   &:hover {
     transition: 300ms ease-in-out;
-    color: ${colors.secondary};
+    color: ${colors.primary};
   }
 
   @media screen and (min-width: ${breakpoints.md}) {
+    color: ${colors.light};
     padding: 0;
   }
 `

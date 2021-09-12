@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import { ButtonSizes } from '../../constants/ButtonSizes';
-import theme from './../../styles/theme';
+import { ButtonSizes } from '../../constants/ButtonSizes'
+import theme from './../../styles/theme'
 
-const { colors, font, spacing, breakpoints } = theme;
+const { colors, font, spacing, breakpoints } = theme
 interface ButtonProps {
-  outline?: boolean;
-  rounded?: boolean;
-  size?: ButtonSizes;
-  desktopSize?: ButtonSizes;
+  outline?: boolean
+  rounded?: boolean
+  size?: ButtonSizes
+  desktopSize?: ButtonSizes
 }
 
 export const Container = styled.a<ButtonProps>`
@@ -17,8 +17,8 @@ export const Container = styled.a<ButtonProps>`
 
   padding: 0 ${spacing[8]};
   border-radius: ${({ rounded }) => (rounded ? '999px' : spacing[3])};
-  background: ${({ outline }) => (outline ? 'transparent' : colors.secondary)};
-  border: ${({ outline }) => (outline ? `2px solid ${colors.secondary}` : 'none')};
+  background: ${({ outline }) => (outline ? 'transparent' : colors.primary)};
+  border: ${({ outline }) => (outline ? `2px solid ${colors.primary}` : 'none')};
 
   display: flex;
   align-items: center;
@@ -28,16 +28,16 @@ export const Container = styled.a<ButtonProps>`
 
   font-size: ${font[20]};
   font-weight: 400;
-  color: ${({ outline }) => (outline ? colors.secondary : colors.dark)};
+  color: ${({ outline }) => (outline ? colors.primary : colors.dark)};
 
   &:hover {
     transition: 300ms ease-in-out;
-    background: ${({ outline }) => (outline ? 'transparent' : colors.secondaryDark)};
-    border: ${({ outline }) => (outline ? `2px solid ${colors.secondaryDark}` : 'none')};
-    color: ${({ outline }) => (outline ? colors.secondaryDark : colors.dark)};
+    background: ${({ outline }) => (outline ? 'transparent' : colors.primaryDark)};
+    border: ${({ outline }) => (outline ? `2px solid ${colors.primaryDark}` : 'none')};
+    color: ${({ outline }) => (outline ? colors.primaryDark : colors.dark)};
   }
 
   @media screen and (min-width: ${breakpoints.md}) {
     height: ${({ desktopSize }) => `${desktopSize}px`};
   }
-`;
+`

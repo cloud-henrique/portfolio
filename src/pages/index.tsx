@@ -38,7 +38,7 @@ const Home: NextPage = () => {
     <HomeContainer>
       <HeroLeft>
         <TitleContainer>
-          <h1>Toda boa ideia merece um bom código,</h1>
+          <h1>Toda boa ideia merece um bom código</h1>
           <h3>e acredito que eu possa te ajudar nisso.</h3>
         </TitleContainer>
 
@@ -106,7 +106,7 @@ const Home: NextPage = () => {
               <ProjectContent>
                 <ProjectTitle>
                   <p>{project.title}</p>
-                  <ExternalLink size={24} color={colors.secondary} />
+                  <ExternalLink size={24} color={colors.primary} />
                 </ProjectTitle>
                 <ProjectDescription>{project.description}</ProjectDescription>
               </ProjectContent>
