@@ -51,7 +51,7 @@ export const HeroLeft = styled.article`
     align-items: flex-start;
     text-align: left;
     justify-content: center;
-    gap: ${spacing[24]};
+    gap: ${spacing[16]};
   }
 `
 
@@ -124,13 +124,33 @@ export const AboutContainer = styled.section`
   align-items: center;
   justify-content: center;
   gap: ${spacing[8]};
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    flex-direction: row-reverse;
+    height: 100vh;
+  }
 `
 
-export const AboutLeft = styled.article``
+export const AboutLeft = styled.article`
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    width: 50%;
+    /* border: 1px solid #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* align-self: flex-end; */
+  }
+`
+
 export const AboutRight = styled.article`
   display: flex;
   flex-direction: column;
   gap: ${spacing[10]};
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    width: 70%;
+  }
 `
 
 export const TextContainer = styled.div<HomeProps>`

@@ -64,8 +64,8 @@ const Home: NextPage = () => {
         <Image
           alt='Homem pardo de óculos e barba, sorrindo para a frente'
           src={avatarImg}
-          width='150'
-          height='150'
+          width='256'
+          height='256'
           layout='fixed'
         />
       </AboutLeft>
