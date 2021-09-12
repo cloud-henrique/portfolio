@@ -163,12 +163,20 @@ export const ProjectsList = styled.ul`
   }
 `
 
-export const ProjectContainer = styled.article`
+export const ProjectContainer = styled.a`
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: ${spacing[3]};
   width: 350px;
+  text-decoration: none;
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    &:hover {
+      transition: 300ms ease-in-out;
+      opacity: 0.6;
+    }
+  }
 `
 
 export const ProjectPreview = styled.div`
@@ -195,10 +203,10 @@ export const ProjectTitle = styled.span`
   p {
     color: ${colors.primary};
     font-size: ${font[18]};
-    font-weight: 600;
   }
 `
 
 export const ProjectDescription = styled.p`
   font-size: ${font[14]};
+  color: ${colors.light};
 `

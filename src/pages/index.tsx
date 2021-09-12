@@ -99,7 +99,7 @@ const Home: NextPage = () => {
         </TitleContainer>
         <ProjectsList>
           {projects.map(project => (
-            <ProjectContainer key={project.key}>
+            <ProjectContainer key={project.key} href={project.href}>
               <ProjectPreview>
                 <Image src={project.media} alt={`Projeto ${project.title}`} width={350} height={197.05} />
               </ProjectPreview>
