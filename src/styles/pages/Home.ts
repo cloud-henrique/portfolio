@@ -1,8 +1,7 @@
-import React from 'react'
 import styled from 'styled-components'
+import Image from 'next/image'
 
 import theme from './../theme'
-
 const { colors, font, spacing, breakpoints } = theme
 
 interface HomeProps {
@@ -169,6 +168,10 @@ export const ProjectsContainer = styled.section`
   justify-content: center;
   flex-direction: column;
   gap: ${spacing[10]};
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    height: 100vh;
+  }
 `
 export const ProjectsList = styled.ul`
   display: flex;
@@ -202,8 +205,6 @@ export const ProjectContainer = styled.a`
 export const ProjectPreview = styled.div`
   width: 100%;
   height: 100%;
-  border-radius: ${spacing[2]};
-  background-color: ${colors.primary};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -229,4 +230,88 @@ export const ProjectTitle = styled.span`
 export const ProjectDescription = styled.p`
   font-size: ${font[14]};
   color: ${colors.light};
+`
+
+export const ExperiencesContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing[5]};
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    gap: ${spacing[10]};
+    height: 100vh;
+  }
+`
+
+export const ExperiencesList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing[6]};
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    gap: ${spacing[10]};
+  }
+`
+
+export const ExperienceContainer = styled.article`
+  width: 100%;
+
+  border: 1px solid ${colors.primaryDark};
+  padding: ${spacing[4]};
+  border-radius: ${spacing[2]};
+
+  display: flex;
+  align-items: center;
+
+  /* flex-direction: column; */
+  gap: ${spacing[4]};
+
+  h3 {
+    font-size: ${font[20]};
+    font-weight: 500;
+  }
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    justify-content: space-between;
+    padding: ${spacing[10]};
+    border-radius: ${spacing[3]};
+    gap: ${spacing[6]};
+
+    h3 {
+      font-size: ${font[24]};
+    }
+  }
+`
+
+export const ExperienceContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${spacing[4]};
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    gap: ${spacing[6]};
+    width: 70%;
+  }
+`
+
+export const ExperienceMedia = styled.a`
+  display: none;
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    display: flex;
+    border-radius: ${spacing[3]};
+    border: 1px solid ${`${colors.light}20`};
+
+    &:hover {
+      transition: all 0.5s ease-in-out;
+      opacity: 0.6;
+    }
+  }
+`
+
+export const StyledImage = styled(Image)`
+  border-radius: ${spacing[2]};
+
+  @media screen and (min-width: ${breakpoints.desktop}) {
+    border-radius: ${spacing[3]};
+  }
 `

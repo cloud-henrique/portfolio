@@ -5,11 +5,11 @@ import Image from 'next/image'
 import { ChevronsDown, ExternalLink } from 'react-feather'
 
 import Links from './../constants/Links'
+import Jobs from '../constants/Jobs'
 import theme from './../styles/theme'
 import Button from '../components/Button'
 import { ButtonSizes } from '../constants/ButtonSizes'
 import trianglesImg from './../assets/img/triangles.svg'
-import wavesImg from './../assets/img/waves.svg'
 import avatarImg from './../assets/img/avatar.png'
 import {
   Container,
@@ -29,6 +29,12 @@ import {
   ProjectTitle,
   ProjectDescription,
   ProjectsList,
+  ExperiencesContainer,
+  ExperiencesList,
+  ExperienceContainer,
+  ExperienceContent,
+  ExperienceMedia,
+  StyledImage,
 } from '../styles/pages/Home'
 
 const Home: NextPage = () => {
@@ -61,13 +67,7 @@ const Home: NextPage = () => {
   const About = () => (
     <AboutContainer>
       <AboutLeft>
-        <Image
-          alt='Homem pardo de óculos e barba, sorrindo para a frente'
-          src={avatarImg}
-          width='256'
-          height='256'
-          layout='fixed'
-        />
+        <Image alt='Homem pardo de óculos e barba, sorrindo' src={avatarImg} width='256' height='256' layout='fixed' />
       </AboutLeft>
       <AboutRight>
         <TitleContainer>
@@ -81,9 +81,9 @@ const Home: NextPage = () => {
             usufruir dela independentemente de qualquer fator.
           </p>
           <p>
-            Atualmente sou desenvolvedor full-stack em uma startup de tecnologia que tem como principal produto uma
-            plataforma de delivery. Minha stack principal é JavaScript (ReactJS, React Native e Vue.js), mas já
-            implementei algumas coisas na faculdade em C++, Java e Python.
+            Atualmente sou desenvolvedor mobile React Native em uma HR Tech cujo produto é uma plataforma integrada para
+            gestão de pessoas e organizações. Minha stack principal é JavaScript (ReactJS, React Native e Vue.js), mas
+            já implementei algumas coisas na faculdade em C++, Java e Python.
           </p>
         </TextContainer>
       </AboutRight>
@@ -101,7 +101,7 @@ const Home: NextPage = () => {
           {projects.map(project => (
             <ProjectContainer key={project.key} href={project.href}>
               <ProjectPreview>
-                <Image src={project.media} alt={`Projeto ${project.title}`} width={350} height={197.05} />
+                <StyledImage src={project.media} alt={`Projeto ${project.title}`} width={350} height={197.05} />
               </ProjectPreview>
               <ProjectContent>
                 <ProjectTitle>
@@ -117,6 +117,29 @@ const Home: NextPage = () => {
     )
   }
 
+  const Experiences = () => (
+    <ExperiencesContainer>
+      <TitleContainer>
+        <h2>Experiências</h2>
+      </TitleContainer>
+      <ExperiencesList>
+        {Jobs.map(job => (
+          <ExperienceContainer key={job.id}>
+            <ExperienceContent>
+              <h3>{job.title}</h3>
+              <TextContainer>
+                <p>{job.description}</p>
+              </TextContainer>
+            </ExperienceContent>
+            <ExperienceMedia href={job.href}>
+              <StyledImage alt={`Empresa ${job.company}`} src={job.media} width={180} height={180} />
+            </ExperienceMedia>
+          </ExperienceContainer>
+        ))}
+      </ExperiencesList>
+    </ExperiencesContainer>
+  )
+
   return (
     <>
       <Head>
@@ -129,6 +152,8 @@ const Home: NextPage = () => {
         <About />
 
         <Projects />
+
+        <Experiences />
       </Container>
     </>
   )
