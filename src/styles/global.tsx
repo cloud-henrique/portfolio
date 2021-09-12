@@ -10,6 +10,10 @@ export default createGlobalStyle`
     font-size: 16px;
     line-height: 120%;
   }
+
+  html{
+    scroll-behavior: smooth;
+  }
   
   body {
     background: ${({ theme }) => theme.colors.dark};

@@ -138,7 +138,6 @@ export const AboutLeft = styled.article`
     align-items: center;
     justify-content: center;
     height: 100%;
-    /* align-self: flex-end; */
   }
 `
 
@@ -270,7 +269,6 @@ export const ExperienceContainer = styled.article`
   display: flex;
   align-items: center;
 
-  /* flex-direction: column; */
   gap: ${spacing[4]};
 
   h3 {
@@ -374,7 +372,7 @@ export const ContactLabel = styled.label`
 
   input,
   textarea {
-    border-radius: ${spacing[2]};
+    border-radius: ${spacing[1]};
     padding: ${spacing[2]};
   }
 
@@ -393,11 +391,14 @@ export const ContactFooter = styled.footer`
   gap: ${spacing[10]};
   align-items: center;
   justify-content: center;
+  padding-bottom: ${spacing[10]};
 
   nav {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: ${spacing[6]};
+    justify-content: center;
+    text-align: center;
   }
 
   a {
@@ -416,6 +417,8 @@ export const ContactFooter = styled.footer`
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     height: 100vh;
+
+    padding-bottom: 0;
     gap: ${spacing[6]};
     nav {
       gap: ${spacing[16]};

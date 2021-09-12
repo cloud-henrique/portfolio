@@ -65,12 +65,11 @@ const Home: NextPage = () => {
       <HeroRight>
         <Image alt='abstract minimalist illustration' src={trianglesImg} width='300' height='244' />
       </HeroRight>
-      {/* <ChevronsDown color={colors.light} /> */}
     </HomeContainer>
   )
 
   const About = () => (
-    <AboutContainer>
+    <AboutContainer id='about'>
       <AboutLeft>
         <Image alt='Homem pardo de óculos e barba, sorrindo' src={avatarImg} width='256' height='256' layout='fixed' />
       </AboutLeft>
@@ -98,7 +97,7 @@ const Home: NextPage = () => {
   const Projects = () => {
     const { projects } = Links
     return (
-      <ProjectsContainer>
+      <ProjectsContainer id='projects'>
         <TitleContainer>
           <h2>Meus Projetos</h2>
         </TitleContainer>
@@ -123,7 +122,7 @@ const Home: NextPage = () => {
   }
 
   const Experiences = () => (
-    <ExperiencesContainer>
+    <ExperiencesContainer id='experiences'>
       <TitleContainer>
         <h2>Experiências</h2>
       </TitleContainer>
@@ -146,7 +145,7 @@ const Home: NextPage = () => {
   )
 
   const Contact = () => (
-    <ContactContainer>
+    <ContactContainer id='contact'>
       <TitleContainer>
         <h2>Contato</h2>
       </TitleContainer>
@@ -184,31 +183,16 @@ const Home: NextPage = () => {
           <p>Ou você pode me acompanhar por aqui também:</p>
         </TextContainer>
         <nav>
-          <a
-            href='https://github.com/claudiohenrique-dev'
-            title='Veja meus códigos no GitHub'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <a href={Links.github} title='Veja meus códigos no GitHub' target='_blank' rel='noopener noreferrer'>
             <GitHub size={spacing[8]} color={colors.dark} />
           </a>
-          <a
-            href='https://linkedin.com/in/claudiohenrique-dev'
-            title='Conectar no LinkedIn'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <a href={Links.linkedin} title='Conectar no LinkedIn' target='_blank' rel='noopener noreferrer'>
             <Linkedin size={spacing[8]} color={colors.dark} />
           </a>
-          <a
-            href='https://t.me/claudiohenrique_dev'
-            title='Conversar no Telegram'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <a href={Links.telegram} title='Conversar no Telegram' target='_blank' rel='noopener noreferrer'>
             <Send size={spacing[8]} color={colors.dark} />
           </a>
-          <a href='mailto:00claudio.henrique@gmail.com' title='Enviar e-mail' target='_blank' rel='noopener noreferrer'>
+          <a href={Links.email} title='Enviar e-mail' target='_blank' rel='noopener noreferrer'>
             <Mail size={spacing[8]} color={colors.dark} />
           </a>
         </nav>
