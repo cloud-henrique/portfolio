@@ -13,7 +13,16 @@ export default createGlobalStyle`
 
   html{
     scroll-behavior: smooth;
+    /* overflow-x: hidden; */
+    -ms--ms-overflow-style: none;
+    /* scrollbar-width:none; */
   }
+
+  html::-webkit-scrollbar{
+    display:none;
+  }
+
+
   
   body {
     background: ${({ theme }) => theme.colors.dark};

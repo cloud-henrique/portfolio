@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />),
         })
 
       const initialProps = await Document.getInitialProps(ctx)
@@ -23,7 +23,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        )
+        ),
       }
     } finally {
       sheet.seal()
@@ -55,9 +55,9 @@ export default class MyDocument extends Document {
           <link rel='icon' type='image/png' sizes='96x96' href='/favicons/favicon-96x96.png' />
           <link rel='icon' type='image/png' sizes='16x16' href='/favicons/favicon-16x16.png' />
           <link rel='manifest' href='/favicons/manifest.json' />
-          <meta name='msapplication-TileColor' content='#2C2A4A' />
+          <meta name='msapplication-TileColor' content='#EFD81D' />
           <meta name='msapplication-TileImage' content='/favicon/ms-icon-144x144.png' />
-          <meta name='theme-color' content='#2C2A4A' />
+          <meta name='theme-color' content='#EFD81D' />
         </Head>
         <body>
           <Main />
