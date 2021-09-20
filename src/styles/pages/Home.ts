@@ -70,7 +70,7 @@ export const TitleContainer = styled.article<HomeProps>`
     font-weight: 700;
 
     @media screen and (min-width: ${breakpoints.md}) {
-      font-size: ${font[64]};
+      font-size: ${font[48]};
     }
   }
 

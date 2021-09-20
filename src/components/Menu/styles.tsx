@@ -63,7 +63,7 @@ export const StyledMenu = styled.nav<MenuProps>`
 export const StyledLink = styled.a`
   text-decoration: none;
   color: ${colors.primary};
-  font-size: ${font[20]};
+  font-size: ${font[18]};
   padding: ${spacing[5]};
 
   &:hover {
