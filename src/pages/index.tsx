@@ -10,7 +10,6 @@ import Jobs from '../constants/Jobs'
 import theme from './../styles/theme'
 import Button from '../components/Button'
 import { ButtonSizes } from '../constants/ButtonSizes'
-import trianglesImg from './../assets/img/triangles.svg'
 import avatarImg from './../assets/img/avatar.png'
 import illustrationImg from './../assets/img/illustration.svg'
 import {
