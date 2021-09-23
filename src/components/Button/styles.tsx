@@ -27,7 +27,7 @@ export const Container = styled.a<ButtonProps>`
   cursor: pointer;
 
   font-size: ${font[20]};
-  font-weight: 400;
+  font-weight: 500;
   color: ${({ outline }) => (outline ? colors.primary : colors.dark)};
 
   &:hover {

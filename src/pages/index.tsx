@@ -12,6 +12,7 @@ import Button from '../components/Button'
 import { ButtonSizes } from '../constants/ButtonSizes'
 import trianglesImg from './../assets/img/triangles.svg'
 import avatarImg from './../assets/img/avatar.png'
+import illustrationImg from './../assets/img/illustration.svg'
 import {
   Container,
   HomeContainer,
@@ -64,7 +65,7 @@ const Home: NextPage = () => {
         </CTAContainer>
       </HeroLeft>
       <HeroRight>
-        <Image alt='abstract minimalist illustration' src={trianglesImg} width='300' height='122' />
+        <Image alt='abstract minimalist illustration' src={illustrationImg} width='400' height='480' />
       </HeroRight>
     </HomeContainer>
   )
@@ -205,7 +206,7 @@ const Home: NextPage = () => {
               <p>Mensagem</p>
               <textarea rows={5} required id='message' placeholder='Insira sua mensagem aqui...' />
             </ContactLabel>
-            <button>Enviar mensagem</button>
+            <Button onClick={() => console.log('hey')}>Enviar mensagem</Button>
           </ContactForm>
         </ContactBody>
 
@@ -215,16 +216,16 @@ const Home: NextPage = () => {
           </TextContainer>
           <nav>
             <a href={Links.github} title='Veja meus códigos no GitHub' target='_blank' rel='noopener noreferrer'>
-              <GitHub size={spacing[8]} color={colors.dark} />
+              <GitHub size={spacing[6]} color={colors.dark} />
             </a>
             <a href={Links.linkedin} title='Conectar no LinkedIn' target='_blank' rel='noopener noreferrer'>
-              <Linkedin size={spacing[8]} color={colors.dark} />
+              <Linkedin size={spacing[6]} color={colors.dark} />
             </a>
             <a href={Links.telegram} title='Conversar no Telegram' target='_blank' rel='noopener noreferrer'>
-              <Send size={spacing[8]} color={colors.dark} />
+              <Send size={spacing[6]} color={colors.dark} />
             </a>
             <a href={Links.email} title='Enviar e-mail' target='_blank' rel='noopener noreferrer'>
-              <Mail size={spacing[8]} color={colors.dark} />
+              <Mail size={spacing[6]} color={colors.dark} />
             </a>
           </nav>
         </ContactFooter>

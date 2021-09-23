@@ -40,7 +40,7 @@ export const HomeContainer = styled.section`
 export const HeroLeft = styled.article`
   display: flex;
   flex-direction: column;
-  padding-top: ${spacing[16]};
+  padding-top: ${spacing[4]};
   gap: ${spacing[20]};
 
   @media screen and (min-width: ${breakpoints.md}) {
@@ -111,7 +111,6 @@ export const HeroRight = styled.article`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: no-repeat center/80% url('/waves.svg');
     height: 100%;
   }
 `
@@ -138,6 +137,8 @@ export const AboutLeft = styled.article`
     align-items: center;
     justify-content: center;
     height: 100%;
+    background: no-repeat center/70% url('/waves.svg');
+    z-index: -9;
   }
 `
 
@@ -245,7 +246,8 @@ export const ExperiencesContainer = styled.section`
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     gap: ${spacing[10]};
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: ${spacing[4]};
   }
 `
 
@@ -278,7 +280,7 @@ export const ExperienceContainer = styled.article`
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     justify-content: space-between;
-    padding: ${spacing[10]};
+    padding: ${spacing[4]} ${spacing[6]};
     border-radius: ${spacing[3]};
     gap: ${spacing[6]};
 
@@ -329,8 +331,11 @@ export const ContactContainer = styled.section`
   gap: ${spacing[10]};
 
   @media screen and (min-width: ${breakpoints.desktop}) {
-    gap: 0;
-    height: 100vh;
+    /* gap: ${spacing[4]}; */
+    /* height: 100vh; */
+    /* min-height: 100vh; */
+    padding-top: ${spacing[4]};
+    padding-bottom: ${spacing[10]};
   }
 `
 
@@ -406,7 +411,7 @@ export const ContactFooter = styled.footer`
     align-items: center;
     justify-content: space-evenly;
     background-color: ${colors.primary};
-    padding: ${spacing[4]};
+    padding: ${spacing[3]};
     border-radius: 50%;
 
     &:hover {
@@ -415,8 +420,8 @@ export const ContactFooter = styled.footer`
     }
   }
 
-  @media screen and (min-width: ${breakpoints.desktop}) {
-    height: 100vh;
+  @media screen and (min-width: 1366px) {
+    /* height: 100vh; */
 
     padding-bottom: 0;
     gap: ${spacing[6]};
