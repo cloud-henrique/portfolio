@@ -21,7 +21,7 @@ const Links = {
       key: 0,
       title: 'Monitorando',
       description:
-        'Rede Colaborativa de Monitoria Digital e Troca de Conhecimentos.\n [MVP de um Hackathon da faculdade.]',
+        'Rede Colaborativa de Monitoria Digital e Troca de Conhecimentos (MVP de um Hackathon da faculdade).',
       href: 'https://claudiohenrique-dev.github.io/monitorando',
       media: monitorandoImg,
     },
@@ -29,7 +29,7 @@ const Links = {
       key: 1,
       title: 'Lyrics Search',
       description:
-        'Deseja cantar sua música favorita com seu artistas favorito? Confira!\n [Site para achar letras de músicas consumindo uma API externa.]',
+        'Deseja cantar sua música favorita com seu artista favorito? Confira! (Site para achar letras de músicas consumindo uma API externa).',
       href: 'https://claudiohenrique-dev.github.io/lyrics-search',
       media: lyricsImg,
     },

@@ -237,6 +237,7 @@ export const ProjectTitle = styled.span`
 export const ProjectDescription = styled.p`
   font-size: ${font[14]};
   color: ${colors.light};
+  line-height: 150%;
 `
 
 export const ExperiencesContainer = styled.section`
