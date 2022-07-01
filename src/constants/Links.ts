@@ -5,8 +5,8 @@ import techflixImg from './../assets/img/projects/techflix.png'
 const Links = {
   homepage: 'https://claudiohenrique.vercel.app',
   github: 'https://github.com/claudiohenrique-dev',
-  linkedin: 'https://linkedin.com/in/claudiohenrique-dev',
-  telegram: 'https://t.me/claudiohenrique_dev',
+  linkedin: 'https://linkedin.com/in/cloud-henrique',
+  telegram: 'https://t.me/cloud_henrique',
   email: 'mailto:00claudio.henrique@gmail.com',
 
   internal: [
