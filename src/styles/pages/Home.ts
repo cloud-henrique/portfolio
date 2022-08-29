@@ -195,6 +195,7 @@ export const ProjectsList = styled.ul`
 `
 
 export const ProjectContainer = styled.a`
+  height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -214,7 +215,7 @@ export const ProjectPreview = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
 `
 

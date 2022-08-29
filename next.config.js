@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    formats: ['image/webp', 'image/avif', 'image/jpg', 'image/png'],
+    formats: ['image/webp'],
   },
 }

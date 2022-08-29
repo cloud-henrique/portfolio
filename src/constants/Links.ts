@@ -1,8 +1,4 @@
-import monitorandoImg from '../assets/img/projects/monitorando.png'
-import lyricsImg from '../assets/img/projects/lyrics-search.png'
-import techflixImg from '../assets/img/projects/techflix.png'
-
-const Links = {
+export const Links = {
   homepage: 'https://claudiohenrique.vercel.app',
   github: 'https://github.com/claudiohenrique-dev',
   linkedin: 'https://linkedin.com/in/cloud-henrique',
@@ -19,11 +15,10 @@ const Links = {
   projects: [
     {
       key: 0,
-      title: 'Monitorando',
-      description:
-        'Rede Colaborativa de Monitoria Digital e Troca de Conhecimentos (MVP de um Hackathon da faculdade).',
-      href: 'https://claudiohenrique-dev.github.io/monitorando',
-      media: monitorandoImg,
+      title: 'JASTA',
+      description: 'J.A.S.T.A. - Just Another Silly Todo App',
+      href: 'https://jasta.vercel.app',
+      media: '/static/img/jasta.png',
     },
     {
       key: 1,
@@ -31,7 +26,7 @@ const Links = {
       description:
         'Deseja cantar sua música favorita com seu artista favorito? Confira! (Site para achar letras de músicas consumindo uma API externa).',
       href: 'https://claudiohenrique-dev.github.io/lyrics-search',
-      media: lyricsImg,
+      media: '/static/img/lyrics-search.png',
     },
     {
       key: 2,
@@ -39,9 +34,7 @@ const Links = {
       description:
         'Plataforma de vídeos recomendados para iniciantes em programação ou entusiastas de tecnologias, estilo Netflix.',
       href: 'https://techflix.01ch01.vercel.app',
-      media: techflixImg,
+      media: '/static/img/techflix.png',
     },
   ],
 }
-
-export default Links

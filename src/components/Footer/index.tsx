@@ -1,12 +1,12 @@
 import React from 'react'
 import { Heart } from 'react-feather'
 
-import Links from '../../constants/Links'
+import { Links } from '../../constants/Links'
 import { theme } from '../../styles/theme'
 
 import { Container, Separator } from './styles'
 
-export default function Footer() {
+export function Footer() {
   const { colors } = theme
 
   return (

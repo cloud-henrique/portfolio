@@ -8,7 +8,7 @@ import {
   StyledLink,
 } from './styles'
 import { Hamburger } from '../Hamburger'
-import Links from '../../constants/Links'
+import { Links } from '../../constants/Links'
 
 export function Menu() {
   const [open, setOpen] = useState(false)

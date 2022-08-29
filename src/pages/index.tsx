@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { ExternalLink, GitHub, Linkedin, Send, Mail } from 'react-feather'
 
-import Links from '../constants/Links'
+import { Links } from '../constants/Links'
 import { Jobs } from '../constants/Jobs'
 import { ButtonSizes } from '../constants/ButtonSizes'
 
@@ -129,9 +129,9 @@ export default function Home() {
                 <ProjectPreview>
                   <StyledImage
                     src={project.media}
-                    alt={`Projeto ${project.title}`}
-                    width={350}
-                    height={197.05}
+                    alt={project.title}
+                    width={320}
+                    height={200}
                   />
                 </ProjectPreview>
                 <ProjectContent>
