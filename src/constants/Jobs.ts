@@ -1,7 +1,9 @@
 /* eslint-disable max-len */
+import { v4 as uuidv4 } from 'uuid'
+
 export const Jobs = [
   {
-    id: 0,
+    id: uuidv4(),
     title: 'Desenvolvedor React.js na Guiavet (2022 - Atual)',
     company: 'LabCinco',
     href: 'https://guia.vet',
@@ -10,7 +12,7 @@ export const Jobs = [
     media: '/static/img/guiavet.png',
   },
   {
-    id: 1,
+    id: uuidv4(),
     title: 'Desenvolvedor Mobile na Mereo (2021 - 2022)',
     company: 'Mereo',
     href: 'https://mereo.com',
@@ -19,7 +21,7 @@ export const Jobs = [
     media: '/static/img/mereo.jpg',
   },
   {
-    id: 2,
+    id: uuidv4(),
     title: 'Desenvolvedor Full-Stack na LabCinco/Bigou Delivery (2021)',
     company: 'LabCinco',
     href: 'https://labcinco.com',
