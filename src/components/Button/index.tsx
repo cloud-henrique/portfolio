@@ -1,7 +1,7 @@
 import React, { ReactNode, MouseEventHandler } from 'react'
 import Link from 'next/link'
 
-import { ButtonSizes } from '../../constants/ButtonSizes'
+import { ButtonSizes } from 'constants/ButtonSizes'
 import { Container } from './styles'
 
 interface ButtonProps {
@@ -45,14 +45,7 @@ export function Button({
         </Link>
       )}
       {onClick && (
-        <Container
-          outline={outline}
-          size={size}
-          type='button'
-          rounded={rounded}
-          onClick={onClick}
-          {...rest}
-        >
+        <Container outline={outline} size={size} type='button' rounded={rounded} onClick={onClick} {...rest}>
           {children}
         </Container>
       )}

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 
-import { theme } from '../theme'
+import { theme } from 'styles/theme'
 
 const { colors, font, spacing, breakpoints } = theme
 

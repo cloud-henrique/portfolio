@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-import { ButtonSizes } from '../../constants/ButtonSizes'
-import { theme } from '../../styles/theme'
+import { ButtonSizes } from 'constants/ButtonSizes'
+import { theme } from 'styles/theme'
 
 const { colors, font, spacing, breakpoints } = theme
 interface ButtonProps {

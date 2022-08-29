@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 
-import {
-  Container,
-  MobileMenu,
-  DesktopMenu,
-  StyledMenu,
-  StyledLink,
-} from './styles'
-import { Hamburger } from '../Hamburger'
-import { Links } from '../../constants/Links'
+import { Links } from 'constants/Links'
+
+import { Hamburger } from 'components/Hamburger'
+
+import { Container, MobileMenu, DesktopMenu, StyledMenu, StyledLink } from './styles'
 
 export function Menu() {
   const [open, setOpen] = useState(false)

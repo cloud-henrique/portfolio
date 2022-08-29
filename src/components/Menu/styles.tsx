@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { theme } from '../../styles/theme'
+import { theme } from 'styles/theme'
 
 const { colors, font, spacing, breakpoints } = theme
 interface MenuProps {

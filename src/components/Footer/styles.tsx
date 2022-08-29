@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { theme } from '../../styles/theme'
+import { theme } from 'styles/theme'
 
 const { colors, font, spacing, breakpoints } = theme
 
@@ -30,6 +30,7 @@ export const Container = styled.footer`
     }
   }
 `
+
 export const Separator = styled.span`
   background-color: ${`${colors.light}40`};
   display: flex;
