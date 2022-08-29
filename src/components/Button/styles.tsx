@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 import { ButtonSizes } from '../../constants/ButtonSizes'
-import theme from './../../styles/theme'
+import { theme } from '../../styles/theme'
 
 const { colors, font, spacing, breakpoints } = theme
 interface ButtonProps {
@@ -18,7 +18,8 @@ export const Container = styled.a<ButtonProps>`
   padding: 0 ${spacing[8]};
   border-radius: ${({ rounded }) => (rounded ? '999px' : spacing[3])};
   background: ${({ outline }) => (outline ? 'transparent' : colors.primary)};
-  border: ${({ outline }) => (outline ? `2px solid ${colors.primary}` : 'none')};
+  border: ${({ outline }) =>
+    outline ? `2px solid ${colors.primary}` : 'none'};
 
   display: flex;
   align-items: center;
@@ -32,8 +33,10 @@ export const Container = styled.a<ButtonProps>`
 
   &:hover {
     transition: 300ms ease-in-out;
-    background: ${({ outline }) => (outline ? 'transparent' : colors.primaryDark)};
-    border: ${({ outline }) => (outline ? `2px solid ${colors.primaryDark}` : 'none')};
+    background: ${({ outline }) =>
+      outline ? 'transparent' : colors.primaryDark};
+    border: ${({ outline }) =>
+      outline ? `2px solid ${colors.primaryDark}` : 'none'};
     color: ${({ outline }) => (outline ? colors.primaryDark : colors.dark)};
   }
 

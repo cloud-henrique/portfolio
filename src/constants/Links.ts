@@ -1,6 +1,6 @@
-import monitorandoImg from './../assets/img/projects/monitorando.png'
-import lyricsImg from './../assets/img/projects/lyrics-search.png'
-import techflixImg from './../assets/img/projects/techflix.png'
+import monitorandoImg from '../assets/img/projects/monitorando.png'
+import lyricsImg from '../assets/img/projects/lyrics-search.png'
+import techflixImg from '../assets/img/projects/techflix.png'
 
 const Links = {
   homepage: 'https://claudiohenrique.vercel.app',

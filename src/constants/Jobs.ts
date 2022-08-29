@@ -1,4 +1,4 @@
-const Jobs = [
+export const Jobs = [
   {
     id: 0,
     title: 'Desenvolvedor Full-Stack na LabCinco/Bigou Delivery (2021)',
@@ -15,8 +15,7 @@ const Jobs = [
     href: 'https://mereo.com',
     description:
       'Desenvolvo funcionalidades para o aplicativo principal com React Native + TypeScript em uma HR Tech cujo produto é uma plataforma integrada para gestão de pessoas e organizações.',
-    media: 'https://mereo.com/wp-content/themes/mereotech/assets/img/logo-mereo.svg',
+    media:
+      'https://mereo.com/wp-content/themes/mereotech/assets/img/logo-mereo.svg',
   },
 ]
-
-export default Jobs

@@ -1,21 +1,22 @@
-import React, { useState } from 'react'
-import Footer from '../Footer'
+import React, { ReactNode } from 'react'
 
+import Footer from '../Footer'
 import { Menu } from '../Menu'
+
 import { Container, MainContainer } from './styles'
 
-const Layout: React.FC = props => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+interface LayoutProps {
+  children: ReactNode
+}
 
+export default function Layout({ children }: LayoutProps) {
   return (
     <Container>
       <Menu />
 
-      <MainContainer>{props.children}</MainContainer>
+      <MainContainer>{children}</MainContainer>
 
       <Footer />
     </Container>
   )
 }
-
-export default Layout

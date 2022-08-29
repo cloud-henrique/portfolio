@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
 
-import { Container, MobileMenu, DesktopMenu, StyledMenu, StyledLink } from './styles'
-import { Hamburguer } from './../Hamburguer'
+import {
+  Container,
+  MobileMenu,
+  DesktopMenu,
+  StyledMenu,
+  StyledLink,
+} from './styles'
+import { Hamburger } from '../Hamburger'
 import Links from '../../constants/Links'
 
-export const Menu = () => {
+export function Menu() {
   const [open, setOpen] = useState(false)
 
   function renderDesktopMenu() {
@@ -22,7 +28,7 @@ export const Menu = () => {
   function renderMobileMenu() {
     return (
       <MobileMenu>
-        <Hamburguer open={open} setOpen={setOpen} />
+        <Hamburger open={open} setOpen={setOpen} />
 
         <StyledMenu open={open}>
           {Links.internal.map(item => (

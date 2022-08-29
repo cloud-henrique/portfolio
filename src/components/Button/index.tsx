@@ -1,21 +1,21 @@
-import React from 'react'
+import React, { ReactNode, MouseEventHandler } from 'react'
 import Link from 'next/link'
 
 import { ButtonSizes } from '../../constants/ButtonSizes'
 import { Container } from './styles'
 
 interface ButtonProps {
-  children: React.ReactNode
+  children: ReactNode
   external?: boolean
   href?: string
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>
+  onClick?: MouseEventHandler<HTMLAnchorElement>
   outline?: boolean
   rounded?: boolean
   size?: ButtonSizes
   desktopSize?: ButtonSizes
 }
 
-const Button: React.FC<ButtonProps> = ({
+export function Button({
   children = 'Default Button',
   external = false,
   href = '',
@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   size = ButtonSizes.base,
   desktopSize = ButtonSizes.md,
   ...rest
-}: ButtonProps) => {
+}: ButtonProps) {
   return (
     <>
       {href && (
@@ -45,12 +45,17 @@ const Button: React.FC<ButtonProps> = ({
         </Link>
       )}
       {onClick && (
-        <Container outline={outline} size={size} type='button' rounded={rounded} onClick={onClick} {...rest}>
+        <Container
+          outline={outline}
+          size={size}
+          type='button'
+          rounded={rounded}
+          onClick={onClick}
+          {...rest}
+        >
           {children}
         </Container>
       )}
     </>
   )
 }
-
-export default Button
