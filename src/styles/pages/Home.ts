@@ -6,18 +6,17 @@ import { theme } from '../theme'
 const { colors, font, spacing, breakpoints } = theme
 
 interface HomeProps {
-  textCenter?: boolean
   growOnDesktop?: boolean
+  textCenter?: boolean
 }
 
 export const Container = styled.main`
-  width: 100vw;
-
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0 ${spacing[5]};
   gap: ${spacing[20]};
+  padding: 0 ${spacing[5]};
+  width: 100vw;
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     padding: 0 calc((100vw - 1266px) / 2);
@@ -25,15 +24,15 @@ export const Container = styled.main`
 `
 
 export const HomeContainer = styled.section`
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: ${spacing[32]};
+  justify-content: space-between;
 
   @media screen and (min-width: ${breakpoints.md}) {
-    flex-direction: row;
     align-items: center;
+    flex-direction: row;
     height: calc(100vh - ${spacing[20]});
   }
 `
@@ -41,33 +40,32 @@ export const HomeContainer = styled.section`
 export const HeroLeft = styled.article`
   display: flex;
   flex-direction: column;
-  padding-top: ${spacing[4]};
   gap: ${spacing[20]};
+  padding-top: ${spacing[4]};
 
   @media screen and (min-width: ${breakpoints.md}) {
-    width: 50%;
-
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    justify-content: center;
     gap: ${spacing[16]};
+    justify-content: center;
+    text-align: left;
+    width: 50%;
   }
 `
 
 export const TitleContainer = styled.article<HomeProps>`
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  text-align: ${({ textCenter }) => (textCenter ? 'center' : 'left')};
   gap: ${spacing[6]};
+  justify-content: center;
   max-width: 80vw;
+  text-align: ${({ textCenter }) => (textCenter ? 'center' : 'left')};
 
   h1,
   h2 {
-    font-size: ${font[40]};
     color: ${colors.primary};
+    font-size: ${font[40]};
     font-weight: 700;
 
     @media screen and (min-width: ${breakpoints.md}) {
@@ -85,19 +83,19 @@ export const TitleContainer = styled.article<HomeProps>`
   }
 
   @media screen and (min-width: ${breakpoints.md}) {
-    text-align: left;
     display: flex;
     justify-content: flex-start;
     padding: 0;
+    text-align: left;
   }
 `
 
 export const CTAContainer = styled.article`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   gap: ${spacing[8]};
+  justify-content: space-between;
 
   @media screen and (min-width: ${breakpoints.md}) {
     flex-direction: row;
@@ -108,22 +106,21 @@ export const HeroRight = styled.article`
   display: none;
 
   @media screen and (min-width: ${breakpoints.md}) {
-    width: 50%;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    display: flex;
     height: 100%;
+    justify-content: center;
+    width: 50%;
   }
 `
 
 export const AboutContainer = styled.section`
-  width: 100%;
-
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: ${spacing[8]};
+  justify-content: center;
+  width: 100%;
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     flex-direction: row-reverse;
@@ -133,12 +130,12 @@ export const AboutContainer = styled.section`
 
 export const AboutLeft = styled.article`
   @media screen and (min-width: ${breakpoints.desktop}) {
-    width: 50%;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100%;
     background: no-repeat center/70% url('/waves.svg');
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 50%;
     z-index: -9;
   }
 `
@@ -171,22 +168,22 @@ export const TextContainer = styled.div<HomeProps>`
 `
 
 export const ProjectsContainer = styled.section`
-  width: 100%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   gap: ${spacing[10]};
+  justify-content: center;
+  width: 100%;
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     height: 100vh;
   }
 `
 export const ProjectsList = styled.ul`
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   flex-wrap: wrap;
   gap: ${spacing[10]};
+  justify-content: center;
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     justify-content: flex-start;
@@ -195,13 +192,13 @@ export const ProjectsList = styled.ul`
 `
 
 export const ProjectContainer = styled.a`
-  height: 100%;
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
   gap: ${spacing[3]};
-  width: 350px;
+  height: 100%;
   text-decoration: none;
+  width: 350px;
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     &:hover {
@@ -212,11 +209,11 @@ export const ProjectContainer = styled.a`
 `
 
 export const ProjectPreview = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
   align-items: baseline;
+  display: flex;
+  height: 100%;
   justify-content: center;
+  width: 100%;
 `
 
 export const ProjectContent = styled.div`
@@ -226,8 +223,8 @@ export const ProjectContent = styled.div`
 `
 
 export const ProjectTitle = styled.span`
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
 
   p {
@@ -237,8 +234,8 @@ export const ProjectTitle = styled.span`
 `
 
 export const ProjectDescription = styled.p`
-  font-size: ${font[14]};
   color: ${colors.light};
+  font-size: ${font[14]};
   line-height: 150%;
 `
 
@@ -265,16 +262,13 @@ export const ExperiencesList = styled.ul`
 `
 
 export const ExperienceContainer = styled.article`
-  width: 100%;
-
-  border: 1px solid ${colors.primaryDark};
-  padding: ${spacing[4]};
-  border-radius: ${spacing[2]};
-
-  display: flex;
   align-items: center;
-
+  border-radius: ${spacing[2]};
+  border: 1px solid ${colors.primaryDark};
+  display: flex;
   gap: ${spacing[4]};
+  padding: ${spacing[4]};
+  width: 100%;
 
   h3 {
     font-size: ${font[20]};
@@ -282,10 +276,10 @@ export const ExperienceContainer = styled.article`
   }
 
   @media screen and (min-width: ${breakpoints.desktop}) {
-    justify-content: space-between;
-    padding: ${spacing[4]} ${spacing[6]};
     border-radius: ${spacing[3]};
     gap: ${spacing[6]};
+    justify-content: space-between;
+    padding: ${spacing[4]} ${spacing[6]};
 
     h3 {
       font-size: ${font[24]};
@@ -306,14 +300,15 @@ export const ExperienceContent = styled.div`
 
 export const ExperienceMedia = styled.a`
   display: none;
+
   @media screen and (min-width: ${breakpoints.desktop}) {
-    display: flex;
     border-radius: ${spacing[3]};
     border: 1px solid ${`${colors.light}20`};
+    display: flex;
 
     &:hover {
-      transition: all 300ms ease-in-out;
       opacity: 0.6;
+      transition: all 300ms ease-in-out;
     }
   }
 `
@@ -327,45 +322,40 @@ export const StyledImage = styled(Image)`
 `
 
 export const ContactContainer = styled.section`
-  width: 100%;
-  justify-content: flex-start;
   display: flex;
   flex-direction: column;
   gap: ${spacing[10]};
+  justify-content: flex-start;
+  width: 100%;
 
   @media screen and (min-width: ${breakpoints.desktop}) {
-    /* gap: ${spacing[4]}; */
-    /* height: 100vh; */
-    /* min-height: 100vh; */
-    padding-top: ${spacing[4]};
     padding-bottom: ${spacing[10]};
+    padding-top: ${spacing[4]};
   }
 `
 
 export const ContactBody = styled.article`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: ${spacing[6]};
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     flex-direction: row;
     gap: 0;
-    padding: ${spacing[8]};
     justify-content: space-between;
+    padding: ${spacing[8]};
   }
 `
 
 export const ContactForm = styled.form`
-  width: 100%;
-
-  padding: ${spacing[6]};
-  border: 1px solid ${colors.light};
   border-radius: ${spacing[3]};
-
+  border: 1px solid ${colors.light};
   display: flex;
   flex-direction: column;
   gap: ${spacing[5]};
+  padding: ${spacing[6]};
+  width: 100%;
 
   @media screen and (min-width: ${breakpoints.desktop}) {
     border-radius: ${spacing[4]};
@@ -394,28 +384,28 @@ export const ContactLabel = styled.label`
 `
 
 export const ContactFooter = styled.footer`
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: ${spacing[10]};
-  align-items: center;
   justify-content: center;
   padding-bottom: ${spacing[10]};
 
   nav {
-    display: flex;
     align-items: baseline;
+    display: flex;
     gap: ${spacing[6]};
     justify-content: center;
     text-align: center;
   }
 
   a {
-    display: flex;
     align-items: center;
-    justify-content: space-evenly;
     background-color: ${colors.primary};
-    padding: ${spacing[3]};
     border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: ${spacing[3]};
 
     &:hover {
       transition: 300ms ease-in-out;
@@ -424,10 +414,9 @@ export const ContactFooter = styled.footer`
   }
 
   @media screen and (min-width: 1366px) {
-    /* height: 100vh; */
-
-    padding-bottom: 0;
     gap: ${spacing[6]};
+    padding-bottom: 0;
+
     nav {
       gap: ${spacing[16]};
     }

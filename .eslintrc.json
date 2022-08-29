@@ -4,12 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": [
-    "plugin:react/recommended",
-    "airbnb",
-    "plugin:@next/next/recommended",
-    "prettier"
-  ],
+  "extends": ["plugin:react/recommended", "airbnb", "plugin:@next/next/recommended", "prettier"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -20,7 +15,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true }],
+    "prettier/prettier": ["error", { "singleQuote": true, "printWidth": 120 }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
@@ -29,6 +24,7 @@
     "import/prefer-default-export": "off",
     "no-dupe-keys": "error",
     "jsx-quotes": ["error", "prefer-single"],
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "max-len": ["error", { "code": 120 }]
   }
 }

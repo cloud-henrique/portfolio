@@ -8,10 +8,9 @@ interface MenuProps {
 }
 
 export const Container = styled.header`
-  height: ${spacing[14]};
-
-  display: flex;
   align-items: center;
+  display: flex;
+  height: ${spacing[14]};
   justify-content: center;
 
   @media screen and (min-width: ${breakpoints.md}) {
@@ -19,8 +18,8 @@ export const Container = styled.header`
   }
 
   @media screen and (min-width: 1366px) {
-    width: 100vw;
     padding: 0 calc((100vw - 1266px) / 2);
+    width: 100vw;
   }
 `
 
@@ -36,39 +35,37 @@ export const DesktopMenu = styled.nav`
   height: 100%;
 
   @media screen and (min-width: ${breakpoints.md}) {
-    display: flex;
     align-items: center;
-    justify-content: center;
+    display: flex;
     gap: ${spacing[16]};
+    justify-content: center;
   }
 `
 
 export const StyledMenu = styled.nav<MenuProps>`
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 75vw;
-  position: fixed;
   background-color: ${colors.secondary};
-  z-index: 1;
-  padding: ${spacing[14]} 0;
-
   display: ${({ open }) => (open ? 'flex' : 'none')};
   flex-direction: column;
-
-  transition: 300ms ease-in-out;
+  height: 100vh;
+  padding: ${spacing[14]} 0;
+  position: fixed;
+  right: 0;
+  top: 0;
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
+  transition: 300ms ease-in-out;
+  width: 75vw;
+  z-index: 1;
 `
 
 export const StyledLink = styled.a`
-  text-decoration: none;
   color: ${colors.primary};
   font-size: ${font[18]};
   padding: ${spacing[5]};
+  text-decoration: none;
 
   &:hover {
-    transition: 300ms ease-in-out;
     color: ${colors.primary};
+    transition: 300ms ease-in-out;
   }
 
   @media screen and (min-width: ${breakpoints.md}) {

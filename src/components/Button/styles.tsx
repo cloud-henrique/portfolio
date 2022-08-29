@@ -5,39 +5,33 @@ import { theme } from '../../styles/theme'
 
 const { colors, font, spacing, breakpoints } = theme
 interface ButtonProps {
+  desktopSize?: ButtonSizes
   outline?: boolean
   rounded?: boolean
   size?: ButtonSizes
-  desktopSize?: ButtonSizes
 }
 
 export const Container = styled.a<ButtonProps>`
-  width: 100%;
-  height: ${({ size }) => `${size}px`};
-
-  padding: 0 ${spacing[8]};
-  border-radius: ${({ rounded }) => (rounded ? '999px' : spacing[3])};
-  background: ${({ outline }) => (outline ? 'transparent' : colors.primary)};
-  border: ${({ outline }) =>
-    outline ? `2px solid ${colors.primary}` : 'none'};
-
-  display: flex;
   align-items: center;
-  justify-content: center;
-  text-decoration: none;
+  background: ${({ outline }) => (outline ? 'transparent' : colors.primary)};
+  border-radius: ${({ rounded }) => (rounded ? '999px' : spacing[3])};
+  border: ${({ outline }) => (outline ? `2px solid ${colors.primary}` : 'none')};
+  color: ${({ outline }) => (outline ? colors.primary : colors.dark)};
   cursor: pointer;
-
+  display: flex;
   font-size: ${font[20]};
   font-weight: 500;
-  color: ${({ outline }) => (outline ? colors.primary : colors.dark)};
+  height: ${({ size }) => `${size}px`};
+  justify-content: center;
+  padding: 0 ${spacing[8]};
+  text-decoration: none;
+  width: 100%;
 
   &:hover {
-    transition: 300ms ease-in-out;
-    background: ${({ outline }) =>
-      outline ? 'transparent' : colors.primaryDark};
-    border: ${({ outline }) =>
-      outline ? `2px solid ${colors.primaryDark}` : 'none'};
+    background: ${({ outline }) => (outline ? 'transparent' : colors.primaryDark)};
+    border: ${({ outline }) => (outline ? `2px solid ${colors.primaryDark}` : 'none')};
     color: ${({ outline }) => (outline ? colors.primaryDark : colors.dark)};
+    transition: 300ms ease-in-out;
   }
 
   @media screen and (min-width: ${breakpoints.md}) {

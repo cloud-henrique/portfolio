@@ -5,7 +5,7 @@ export const Jobs = [
     company: 'LabCinco',
     href: 'https://guia.vet',
     description:
-      'Desenvolvo funcionalidades para a plataforma web usando React em uma startup especializada no controle de saúde e bem estar de animais de estimação.',
+      'Desenvolvo funcionalidades para a plataforma web usando React + TypeScript em uma startup especializada no controle de saúde e bem estar de animais de estimação.',
     media: '/static/img/guiavet.png',
   },
   {
