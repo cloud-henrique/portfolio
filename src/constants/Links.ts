@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 export const Links = {
   homepage: 'https://claudiohenrique.vercel.app',
   github: 'https://github.com/claudiohenrique-dev',

@@ -32,6 +32,7 @@ export default class MyDocument extends Document {
           <link rel='canonical' href={Links.homepage} />
           <meta charSet='utf-8' />
           <link
+            // eslint-disable-next-line max-len
             href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap'
             rel='stylesheet'
           />

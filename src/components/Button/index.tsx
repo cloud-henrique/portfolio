@@ -1,8 +1,11 @@
 import React, { ReactNode, MouseEventHandler } from 'react'
 import Link from 'next/link'
 
-import { ButtonSizes } from 'constants/ButtonSizes'
+import { theme } from 'styles/theme'
+
 import { Container } from './styles'
+
+const { buttonSizes } = theme
 
 interface ButtonProps {
   children: ReactNode
@@ -11,8 +14,8 @@ interface ButtonProps {
   onClick?: MouseEventHandler<HTMLAnchorElement>
   outline?: boolean
   rounded?: boolean
-  size?: ButtonSizes
-  desktopSize?: ButtonSizes
+  size?: number
+  desktopSize?: number
 }
 
 export function Button({
@@ -22,8 +25,8 @@ export function Button({
   onClick,
   outline = false,
   rounded = false,
-  size = ButtonSizes.base,
-  desktopSize = ButtonSizes.md,
+  size = buttonSizes.base,
+  desktopSize = buttonSizes.md,
   ...rest
 }: ButtonProps) {
   return (

@@ -5,7 +5,6 @@ import { ExternalLink, GitHub, Linkedin, Send, Mail } from 'react-feather'
 
 import { Links } from 'constants/Links'
 import { Jobs } from 'constants/Jobs'
-import { ButtonSizes } from 'constants/ButtonSizes'
 
 import { Button } from 'components/Button'
 
@@ -43,7 +42,7 @@ import {
 } from '../styles/pages/Home'
 
 export default function Home() {
-  const { colors, spacing } = theme
+  const { colors, spacing, buttonSizes } = theme
   const { projects } = Links
 
   return (
@@ -61,10 +60,10 @@ export default function Home() {
             </TitleContainer>
 
             <CTAContainer>
-              <Button desktopSize={ButtonSizes.md} href='#contact'>
+              <Button desktopSize={buttonSizes.md} href='#contact'>
                 Contato
               </Button>
-              <Button desktopSize={ButtonSizes.md} href='#projects' outline>
+              <Button desktopSize={buttonSizes.md} href='#projects' outline>
                 Projetos
               </Button>
             </CTAContainer>
