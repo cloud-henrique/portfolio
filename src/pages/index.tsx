@@ -99,7 +99,7 @@ export default function Home() {
             <TextContainer>
               <p>
                 Estou cursando Ciência da Computação no Instituto Federal do
-                Sudeste de Minas Gerais – Campus Rio Pomba. Acredito que a
+                Sudeste de Minas Gerais - Campus Rio Pomba. Acredito que a
                 tecnologia é um bem universal e deve ser acessível a todas as
                 pessoas, de modo que possam usufruir dela independentemente de
                 qualquer fator.
@@ -161,7 +161,7 @@ export default function Home() {
                 </ExperienceContent>
                 <ExperienceMedia href={job.href}>
                   <StyledImage
-                    alt={`Empresa ${job.company}`}
+                    alt={job.company}
                     src={job.media}
                     width={180}
                     height={180}

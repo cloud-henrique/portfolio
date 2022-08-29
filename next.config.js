@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['labcinco.com', 'mereo.com'],
+    formats: ['image/webp', 'image/avif', 'image/jpg', 'image/png'],
   },
 }
