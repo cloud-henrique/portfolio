@@ -10,6 +10,6 @@ Neste repositório está o meu portfólio/site pessoal para visualizarem meus pr
 
 ## 💻 Tecnologias utilizadas
 
-- ReactJS
+- React.js
 - Next.js
-- Styled Components
+- styled-components
