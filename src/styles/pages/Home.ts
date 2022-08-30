@@ -350,7 +350,7 @@ export const ContactBody = styled.article`
 
 export const ContactForm = styled.form`
   border-radius: ${spacing[3]};
-  border: 1px solid ${colors.light};
+  border: 1px solid ${colors.primary};
   display: flex;
   flex-direction: column;
   gap: ${spacing[5]};

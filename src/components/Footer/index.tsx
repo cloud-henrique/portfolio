@@ -16,8 +16,9 @@ export function Footer() {
     <Container>
       <Separator />
       <span>
-        Copyright &copy; {year} - Desenvolvido com <Heart size={12} fill={colors.primary} /> por{' '}
+        Copyright &copy; {year} - Desenvolvido com <Heart size={12} color={colors.primary} fill={colors.primary} /> por
         <a href={Links.github} target='_blank' rel='noopener noreferrer'>
+          {' '}
           Cláudio Henrique
         </a>
       </span>

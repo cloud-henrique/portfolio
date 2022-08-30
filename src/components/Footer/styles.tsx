@@ -20,6 +20,7 @@ export const Container = styled.footer`
 
   a {
     color: ${colors.primary};
+    font-weight: bold;
     text-decoration: none;
   }
 

@@ -2,6 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    formats: ['image/webp'],
+    domains: ['github.com'],
+    formats: ['image/webp', 'image/avif'],
   },
 }

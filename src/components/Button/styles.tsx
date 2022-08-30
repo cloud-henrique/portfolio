@@ -16,7 +16,7 @@ export const Container = styled.a<ButtonProps>`
   background: ${({ outline }) => (outline ? 'transparent' : colors.primary)};
   border-radius: ${({ rounded }) => (rounded ? '999px' : spacing[3])};
   border: ${({ outline }) => (outline ? `2px solid ${colors.primary}` : 'none')};
-  color: ${({ outline }) => (outline ? colors.primary : colors.dark)};
+  color: ${({ outline }) => (outline ? colors.primary : colors.light)};
   cursor: pointer;
   display: flex;
   font-size: ${font[20]};

@@ -51,9 +51,9 @@ export default class MyDocument extends Document {
           <link rel='icon' type='image/png' sizes='96x96' href='/favicons/favicon-96x96.png' />
           <link rel='icon' type='image/png' sizes='16x16' href='/favicons/favicon-16x16.png' />
           <link rel='manifest' href='/favicons/manifest.json' />
-          <meta name='msapplication-TileColor' content='#EFD81D' />
+          <meta name='msapplication-TileColor' content='#DE2863' />
           <meta name='msapplication-TileImage' content='/favicon/ms-icon-144x144.png' />
-          <meta name='theme-color' content='#EFD81D' />
+          <meta name='theme-color' content='#DE2863' />
         </Head>
         <body>
           <Main />

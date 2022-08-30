@@ -75,9 +75,9 @@ export default function Home() {
 
         <AboutContainer id='about'>
           <AboutLeft>
-            <Image
+            <StyledImage
               alt='Homem pardo de óculos e barba, sorrindo'
-              src='/static/img/avatar.png'
+              src={`${Links.github}.png`}
               width='256'
               height='256'
               layout='fixed'
@@ -187,16 +187,16 @@ export default function Home() {
             </TextContainer>
             <nav>
               <a href={Links.github} title='Veja meus códigos no GitHub' target='_blank' rel='noopener noreferrer'>
-                <GitHub size={spacing[6]} color={colors.dark} />
+                <GitHub size={spacing[6]} color={colors.light} />
               </a>
               <a href={Links.linkedin} title='Conectar no LinkedIn' target='_blank' rel='noopener noreferrer'>
-                <Linkedin size={spacing[6]} color={colors.dark} />
+                <Linkedin size={spacing[6]} color={colors.light} />
               </a>
               <a href={Links.telegram} title='Conversar no Telegram' target='_blank' rel='noopener noreferrer'>
-                <Send size={spacing[6]} color={colors.dark} />
+                <Send size={spacing[6]} color={colors.light} />
               </a>
               <a href={Links.email} title='Enviar e-mail' target='_blank' rel='noopener noreferrer'>
-                <Mail size={spacing[6]} color={colors.dark} />
+                <Mail size={spacing[6]} color={colors.light} />
               </a>
             </nav>
           </ContactFooter>
