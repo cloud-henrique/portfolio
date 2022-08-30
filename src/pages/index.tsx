@@ -39,6 +39,7 @@ import {
   ContactForm,
   ContactFooter,
   ContactLabel,
+  AvatarImage,
 } from '../styles/pages/Home'
 
 export default function Home() {
@@ -75,7 +76,7 @@ export default function Home() {
 
         <AboutContainer id='about'>
           <AboutLeft>
-            <StyledImage
+            <AvatarImage
               alt='Homem pardo de óculos e barba, sorrindo'
               src={`${Links.github}.png`}
               width='256'

@@ -131,13 +131,16 @@ export const AboutContainer = styled.section`
 export const AboutLeft = styled.article`
   @media screen and (min-width: ${breakpoints.desktop}) {
     align-items: center;
-    background: no-repeat center/70% url('/waves.svg');
     display: flex;
     height: 100%;
     justify-content: center;
     width: 50%;
     z-index: -9;
   }
+`
+
+export const AvatarImage = styled(Image)`
+  border-radius: 50%;
 `
 
 export const AboutRight = styled.article`
