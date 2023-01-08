@@ -1,19 +1,17 @@
-import 'styles/global.tsx'
 import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'next-themes'
 
-import GlobalStyle from 'styles/global'
-import { theme } from 'styles/theme'
-import Layout from 'components/Layout'
+import { Layout } from 'components'
+
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider enableSystem attribute='class'>
+      <Layout>
         <Component {...pageProps} />
-        <GlobalStyle />
-      </ThemeProvider>
-    </Layout>
+      </Layout>
+    </ThemeProvider>
   )
 }
 

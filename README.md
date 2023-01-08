@@ -12,4 +12,4 @@ Neste repositório está o meu portfólio/site pessoal para visualizarem meus pr
 
 - React.js
 - Next.js
-- styled-components
+- Tailwind CSS

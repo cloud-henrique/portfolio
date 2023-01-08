@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply transition-all;
+  }
+}
+
+.btn-primary {
+  /* @apply btn; */
+}
+
+.btn-secondary {
+  /* @apply btn; */
+}
+
+.btn-gradient {
+  /* @apply btn; */
+}
+
+@media screen and (min-width: 786px) {
+  .hero {
+    height: calc(100vh - 5rem);
+  }
+}
