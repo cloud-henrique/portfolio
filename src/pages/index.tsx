@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <Head title='Pulsatrix Apps' />
+      <Head title='Cláudio Henrique' />
 
       <div className='transition-all duration-300 flex-col'>
         <h1>Toda boa ideia merece um bom código</h1>
