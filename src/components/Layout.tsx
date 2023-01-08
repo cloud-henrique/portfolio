@@ -25,7 +25,7 @@ export function Layout({ children }: LayoutProps) {
   if (!mounted) return null
 
   return (
-    <div>
+    <>
       <Header toggleTheme={toggleTheme} isDarkTheme={currentTheme === 'dark'} />
 
       <HamburguerMenu open={openMobileMenu} setOpen={setOpenMobileMenu} />
@@ -36,6 +36,6 @@ export function Layout({ children }: LayoutProps) {
         <main>{children}</main>
         <Footer />
       </div>
-    </div>
+    </>
   )
 }
