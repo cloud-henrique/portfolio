@@ -34,7 +34,7 @@ export function Layout({ children }: LayoutProps) {
 
       <div className={openMobileMenu ? 'blur' : 'flex-col'}>
         <main>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   )
