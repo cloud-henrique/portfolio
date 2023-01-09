@@ -8,10 +8,11 @@ import { ArrowDownCircle, Mail, GitHub, Linkedin, Twitter } from 'react-feather'
 import { Head } from 'components/Head'
 
 import laptopAnimation from 'assets/programming-computer.json'
+import Image from 'next/image'
 
 const iconsClass = 'h-8 w-8 animate-pulse'
 
-function Hero({ ref }: any) {
+function Hero({ scrollRef }: any) {
   return (
     <>
       <section id='hero' className='flex flex-col md:flex-row items-center hero'>
@@ -47,7 +48,7 @@ function Hero({ ref }: any) {
 
       <span className='flex mt-10 md:-mt-10 items-center justify-center justify-self-end'>
         <ArrowDownCircle
-          onClick={() => ref?.current?.scrollIntoView()}
+          onClick={() => scrollRef?.current?.scrollIntoView()}
           className='h-8 w-8 text-primary-500 dark:text-emerald-500 animate-bounce cursor-pointer'
         />
       </span>
@@ -55,14 +56,16 @@ function Hero({ ref }: any) {
   )
 }
 
-function About({ ref }: any) {
+function About({ scrollRef }: any) {
   return (
-    <section ref={ref} className='flex flex-col md:flex-row-reverse items-center mt-20 mb-6'>
+    <section ref={scrollRef} id='about' className='flex flex-col md:flex-row-reverse items-center pt-20 pb-6'>
       <article className='md:w-1/2 md:flex md:justify-center'>
-        <img
+        <Image
           alt='Cláudio Henrique'
           src='/static/img/claudio-henrique.png'
-          className='rounded-full w-32 h-32 md:w-64 md:h-64 self-center'
+          className='rounded-full'
+          height={192}
+          width={192}
         />
       </article>
 
@@ -91,8 +94,8 @@ export default function Home() {
       <Head title='Cláudio Henrique' />
 
       <div className='transition-all duration-300 flex-col px-6 md:px-14 bg-gray-50 dark:bg-gray-900'>
-        <Hero ref={scrollRef} />
-        <About ref={scrollRef} />
+        <Hero scrollRef={scrollRef} />
+        <About scrollRef={scrollRef} />
       </div>
     </>
   )
