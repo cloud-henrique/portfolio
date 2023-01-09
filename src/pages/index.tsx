@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
+/* eslint-disable @next/next/no-img-element */
 import { useRef } from 'react'
 
-import Image from 'next/image'
 import Lottie from 'lottie-react'
 import { ArrowDownCircle, Mail, GitHub, Linkedin, Twitter } from 'react-feather'
 
@@ -10,15 +11,13 @@ import laptopAnimation from 'assets/programming-computer.json'
 
 const iconsClass = 'h-8 w-8 animate-pulse'
 
-function Hero() {
-  const scrollRef = useRef<null | HTMLElement>(null)
-
+function Hero({ ref }: any) {
   return (
     <>
       <section id='hero' className='flex flex-col md:flex-row items-center hero'>
         <article className='mt-24 md:mt-0 text-center md:text-left md:w-1/2'>
           <h1 className='font-bold text-4xl md:text-5xl text-gray-900 dark:text-primary-300'>
-            Toda boa ideia merece <br /> um bom código
+            Toda boa ideia merece um bom código
           </h1>
           <p className='my-10 md:mt-6 md:mb-16 text-gray-700 dark:text-gray-400 md:text-2xl'>
             e acredito que eu possa te ajudar nisso.
@@ -48,7 +47,7 @@ function Hero() {
 
       <span className='flex mt-10 md:-mt-10 items-center justify-center justify-self-end'>
         <ArrowDownCircle
-          onClick={() => scrollRef?.current?.scrollIntoView()}
+          onClick={() => ref?.current?.scrollIntoView()}
           className='h-8 w-8 text-primary-500 dark:text-emerald-500 animate-bounce cursor-pointer'
         />
       </span>
@@ -56,28 +55,44 @@ function Hero() {
   )
 }
 
-function About() {
+function About({ ref }: any) {
   return (
-    <section>
-      <Image
-        width={256}
-        height={256}
-        className='rounded-full'
-        src='/static/img/claudio-henrique.png'
-        alt='Homem pardo de óculos, cabelo afro e barba, olhando pra uma tartaruga de brinquedo que está em sua cabeça'
-      />
+    <section ref={ref} className='flex flex-col md:flex-row-reverse items-center mt-20 mb-6'>
+      <article className='md:w-1/2 md:flex md:justify-center'>
+        <img
+          alt='Cláudio Henrique'
+          src='/static/img/claudio-henrique.png'
+          className='rounded-full w-32 h-32 md:w-64 md:h-64 self-center'
+        />
+      </article>
+
+      <article className='md:w-1/2'>
+        <h2 className='mt-8 mb-6 text-center md:text-left font-bold text-3xl md:text-5xl text-gray-900 dark:text-gray-300'>
+          Olá, meu nome é <br /> <span className='text-primary-500 dark:text-primary-300'>Cláudio Henrique</span>!
+        </h2>
+        <p className='text-gray-700 dark:text-gray-400'>
+          Sou desenvolvedor front-end e mobile morando em Rio Pomba - MG, e estou cursando Ciência da Computação no
+          Instituto Federal do Sudeste de Minas Gerais.
+          <br /> <br />
+          Acredito que a tecnologia é um bem universal e deve ser acessível a todas as pessoas. Programo
+          profissionalmente há quase 2 anos e atualmente trabalho com React e React Native (e estudando um pouco de
+          UI/UX também).
+        </p>
+      </article>
     </section>
   )
 }
 
 export default function Home() {
+  const scrollRef = useRef<null | HTMLElement>(null)
+
   return (
     <>
       <Head title='Cláudio Henrique' />
 
       <div className='transition-all duration-300 flex-col px-6 md:px-14 bg-gray-50 dark:bg-gray-900'>
-        <Hero />
-        <About />
+        <Hero ref={scrollRef} />
+        <About ref={scrollRef} />
       </div>
     </>
   )
