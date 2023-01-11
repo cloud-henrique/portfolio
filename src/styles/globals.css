@@ -29,6 +29,6 @@
 
 @media screen and (min-width: 786px) {
   .hero {
-    height: calc(100vh - 5rem);
+    min-height: calc(100vh - 5rem);
   }
 }

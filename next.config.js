@@ -4,4 +4,7 @@ module.exports = {
     domains: ['github.com'],
     formats: ['image/webp', 'image/avif'],
   },
+  experimental: {
+    forceSwcTransforms: true,
+  },
 }
