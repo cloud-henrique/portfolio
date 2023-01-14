@@ -22,6 +22,7 @@ module.exports = {
           900: '#312e81',
         },
       },
+      fontSize: { '3xl': '2rem' },
     },
   },
   plugins: [],
