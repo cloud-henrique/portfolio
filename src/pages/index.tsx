@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable @next/next/no-img-element */
 import { useRef } from 'react'
 
 import Lottie from 'lottie-react'
@@ -9,9 +11,34 @@ import { Head } from 'components/Head'
 
 import laptopAnimation from 'assets/programming-computer.json'
 
-const iconsClass = 'h-8 w-8 animate-pulse'
-
 function Hero({ scrollRef }: any) {
+  const socials = [
+    {
+      icon: Mail,
+      className: 'h-8 w-8 animate-pulse',
+      href: 'mailto: 00claudio.henrique@gmail.com',
+      label: 'Acessar o e-mail',
+    },
+    {
+      icon: GitHub,
+      className: 'h-8 w-8 animate-pulse',
+      href: 'https://github.com/cloud-henrique',
+      label: 'Acessar o GitHub',
+    },
+    {
+      icon: Linkedin,
+      className: 'h-8 w-8 animate-pulse',
+      href: 'https://linkedin.com/in/cloud-henrique',
+      label: 'Acessar o LinkedIn',
+    },
+    {
+      icon: Twitter,
+      className: 'h-8 w-8 animate-pulse',
+      href: 'https://twitter.com/cloud_henrique',
+      label: 'Acessar o Twitter',
+    },
+  ]
+
   return (
     <>
       <section id='hero' className='flex flex-col md:flex-row items-center hero'>
@@ -24,10 +51,11 @@ function Hero({ scrollRef }: any) {
           </p>
 
           <span className='flex md:hidden gap-10 justify-center text-primary-500 dark:text-primary-300'>
-            <Mail className={iconsClass} />
-            <GitHub className={iconsClass} />
-            <Linkedin className={iconsClass} />
-            <Twitter className={iconsClass} />
+            {socials.map(social => (
+              <Link key={social.label} href={social.href} target='_blank'>
+                <social.icon className={social.className} />
+              </Link>
+            ))}
           </span>
 
           <div className='mt-16 flex flex-col md:flex-row gap-6'>
@@ -147,6 +175,61 @@ function Projects() {
   )
 }
 
+function Experiences() {
+  const experiences = [
+    {
+      title: 'Desenvolvedor React.js na Guiavet (2022 - Atual)',
+      description:
+        'Desenvolvo funcionalidades para a plataforma web usando React.js em uma startup especializada no controle de saúde e bem estar de animais de estimação.',
+      image: '/static/img/guiavet.png',
+      link: 'https://guia.vet',
+      alt: 'Guiavet',
+    },
+    {
+      title: 'Desenvolvedor mobile na Mereo (2021 - 2022)',
+      description:
+        'Durante 11 meses, desenvolvi funcionalidades para o aplicativo principal usando React Native + TypeScript em uma HR Tech cujo produto é uma plataforma integrada para gestão de pessoas e organizações.',
+      image: '/static/img/mereo.jpg',
+      link: 'https://mereo.com',
+      alt: 'Mereo',
+    },
+    {
+      title: 'Desenvolvedor mobile e front-end na LabCinco/Bigou Delivery (2021)',
+      description:
+        'Durante 7 meses, desenvolvi funcionalidades e dei manutenção em plataformas web e mobile usando Next, React, React Native e Vue em uma startup de tecnologia do Sudeste de Minas Gerais que tem como principal produto uma plataforma de delivery.',
+      image: '/static/img/bigou.png',
+      link: 'https://bigou.com.br',
+      alt: 'Bigou Delivery',
+    },
+  ]
+
+  return (
+    <section id='experiences' className='md:min-h-screen'>
+      <h2 className='font-bold text-3xl md:text-5xl text-gray-900 dark:text-gray-300 pt-20 mb-6 md:mb-10'>
+        Experiências
+      </h2>
+      <ul className='flex flex-col gap-6'>
+        {experiences.map(experience => (
+          <li
+            key={experience.image}
+            className='flex flex-col md:flex-row rounded-lg p-4 md:p-8 border border-primary-500 dark:border-primary-300 shadow-md dark:shadow-white/20'
+          >
+            <article className='flex flex-col gap-4 md:gap-6 md:pr-4'>
+              <h3 className='font-bold text-xl text-gray-900 dark:text-gray-300'>{experience.title}</h3>
+              <p className='text-gray-700 dark:text-gray-400'>{experience.description}</p>
+            </article>
+            <img
+              alt={experience.alt}
+              src={experience.image}
+              className='rounded-lg hidden md:flex w-40 h-40 md:ml-auto self-center'
+            />
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
 export default function Home() {
   const scrollRef = useRef<null | HTMLElement>(null)
 
@@ -158,6 +241,7 @@ export default function Home() {
         <Hero scrollRef={scrollRef} />
         <About scrollRef={scrollRef} />
         <Projects />
+        <Experiences />
       </div>
     </>
   )
