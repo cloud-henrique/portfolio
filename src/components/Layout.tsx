@@ -2,7 +2,7 @@ import { ReactNode, useEffect, useState } from 'react'
 
 import { useTheme } from 'next-themes'
 
-import { Header, Footer, HamburguerMenu, MobileHeader } from 'components'
+import { HamburguerMenu, Header, MobileHeader } from 'components'
 
 interface LayoutProps {
   children: ReactNode
