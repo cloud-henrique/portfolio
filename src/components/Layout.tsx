@@ -2,7 +2,7 @@ import { ReactNode, useEffect, useState } from 'react'
 
 import { useTheme } from 'next-themes'
 
-import { HamburguerMenu, Header, MobileHeader } from 'components'
+import { Footer, HamburguerMenu, Header, MobileHeader } from 'components'
 
 interface LayoutProps {
   children: ReactNode
@@ -34,7 +34,7 @@ export function Layout({ children }: LayoutProps) {
 
       <div className={openMobileMenu ? 'blur' : 'flex-col'}>
         <main>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   )
