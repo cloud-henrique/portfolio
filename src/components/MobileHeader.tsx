@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { Moon, Sun } from 'react-feather'
 
-import { Switch, links } from 'components'
+import { links, Switch } from 'components'
 
 interface MobileHeaderProps {
   open: boolean
@@ -13,7 +13,7 @@ interface MobileHeaderProps {
 export function MobileHeader({ open, isDarkTheme, toggleTheme }: MobileHeaderProps) {
   return (
     <header
-      className={`flex flex-col md:hidden py-14 bg-primary-500 dark:bg-primary-700 z-10 h-screen fixed ease-in-out duration-300 w-3/4 right-0 top-0 ${
+      className={`flex flex-col md:hidden py-14 bg-primary-500 dark:bg-primary-700 z-50 h-screen fixed ease-in-out duration-300 w-3/4 right-0 top-0 ${
         open ? 'translate-x-0' : 'translate-x-full'
       }`}
     >
