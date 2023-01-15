@@ -204,7 +204,7 @@ function Experiences() {
         {experiences.map(experience => (
           <li
             key={experience.image}
-            className='flex flex-col md:flex-row rounded-lg p-4 md:p-8 border border-primary-500 dark:border-primary-300 shadow-md dark:shadow-white/20 md:w-4/5 md:self-center'
+            className='flex flex-col md:flex-row rounded-lg p-4 md:p-8 border border-primary-500 dark:border-primary-300 shadow-md dark:shadow-white/20 lg:w-4/5 md:self-center'
           >
             <article className='flex flex-col gap-4 md:gap-6 md:w-3/5'>
               <h3 className='font-bold text-xl text-gray-900 dark:text-gray-300'>{experience.title}</h3>
