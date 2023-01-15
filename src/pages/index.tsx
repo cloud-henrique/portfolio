@@ -5,7 +5,7 @@ import { useRef } from 'react'
 import Lottie from 'lottie-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowDownCircle, ExternalLink, GitHub, Linkedin, Mail, Twitter } from 'react-feather'
+import { ArrowDownCircle, ExternalLink, GitHub, Linkedin, Mail, Send } from 'react-feather'
 
 import { Head } from 'components/Head'
 
@@ -15,27 +15,23 @@ function Hero({ scrollRef }: any) {
   const socials = [
     {
       icon: Mail,
-      className: 'h-8 w-8 animate-pulse',
       href: 'mailto: 00claudio.henrique@gmail.com',
       label: 'Acessar o e-mail',
     },
     {
       icon: GitHub,
-      className: 'h-8 w-8 animate-pulse',
       href: 'https://github.com/cloud-henrique',
       label: 'Acessar o GitHub',
     },
     {
       icon: Linkedin,
-      className: 'h-8 w-8 animate-pulse',
       href: 'https://linkedin.com/in/cloud-henrique',
       label: 'Acessar o LinkedIn',
     },
     {
-      icon: Twitter,
-      className: 'h-8 w-8 animate-pulse',
-      href: 'https://twitter.com/cloud_henrique',
-      label: 'Acessar o Twitter',
+      icon: Send,
+      href: 'https://t.me/cloud_henrique',
+      label: 'Acessar o Telegram',
     },
   ]
 
@@ -53,21 +49,17 @@ function Hero({ scrollRef }: any) {
           <span className='flex md:hidden gap-10 justify-center text-primary-500 dark:text-primary-300'>
             {socials.map(social => (
               <Link key={social.label} href={social.href} target='_blank'>
-                <social.icon className={social.className} />
+                <social.icon className='h-8 w-8 animate-pulse' />
               </Link>
             ))}
           </span>
 
           <div className='mt-16 flex flex-col md:flex-row gap-6'>
             <Link href='#contact'>
-              <button type='button' className='btn-primary'>
-                Contato
-              </button>
+              <div className='btn-primary'>Contato</div>
             </Link>
             <Link href='#projects'>
-              <button type='button' className='btn-secondary'>
-                Projetos
-              </button>
+              <div className='btn-secondary'>Projetos</div>
             </Link>
           </div>
         </article>
@@ -150,7 +142,7 @@ function Projects() {
         Meus Projetos
       </h2>
 
-      <ul className='mt-6 md:mt-20 flex gap-6 md:gap-16 flex-wrap'>
+      <ul className='mt-6 md:mt-20 flex gap-6 md:gap-16 flex-wrap justify-center md:justify-start'>
         {projects.map(project => (
           <Link key={project.href} href={project.href} target='_blank'>
             <li className='w-80 cursor-pointer hover:animate-pulse'>
@@ -180,7 +172,7 @@ function Experiences() {
     {
       title: 'Desenvolvedor React.js na Guiavet (2022 - Atual)',
       description:
-        'Desenvolvo funcionalidades para a plataforma web usando React.js em uma startup especializada no controle de saúde e bem estar de animais de estimação.',
+        'Desenvolvo funcionalidades para web usando React.js em uma startup especializada no controle de saúde e bem estar de animais de estimação.',
       image: '/static/img/guiavet.png',
       link: 'https://guia.vet',
       alt: 'Guiavet',
@@ -212,9 +204,9 @@ function Experiences() {
         {experiences.map(experience => (
           <li
             key={experience.image}
-            className='flex flex-col md:flex-row rounded-lg p-4 md:p-8 border border-primary-500 dark:border-primary-300 shadow-md dark:shadow-white/20'
+            className='flex flex-col md:flex-row rounded-lg p-4 md:p-8 border border-primary-500 dark:border-primary-300 shadow-md dark:shadow-white/20 md:w-4/5 md:self-center'
           >
-            <article className='flex flex-col gap-4 md:gap-6 md:pr-4'>
+            <article className='flex flex-col gap-4 md:gap-6 md:w-3/5'>
               <h3 className='font-bold text-xl text-gray-900 dark:text-gray-300'>{experience.title}</h3>
               <p className='text-gray-700 dark:text-gray-400'>{experience.description}</p>
             </article>
@@ -223,6 +215,64 @@ function Experiences() {
               src={experience.image}
               className='rounded-lg hidden md:flex w-40 h-40 md:ml-auto self-center'
             />
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+function Contact() {
+  const contacts = [
+    {
+      icon: GitHub,
+      title: '💻 Caso queira ver meus códigos',
+      href: 'https://github.com/cloud-henrique',
+      link: 'github.com/cloud-henrique',
+    },
+    {
+      icon: Linkedin,
+      title: '🎩 Para um contato mais profissional',
+      href: 'https://linkedin.com/in/cloud-henrique',
+      link: 'linkedin.com/in/cloud-henrique',
+    },
+    {
+      icon: Mail,
+      title: '📫 Caso você seja old-school',
+      href: 'mailto:00claudio.henrique@gmail.com',
+      link: '00claudio.henrique@gmail.com',
+    },
+    {
+      icon: Send,
+      title: '👋🏽 Caso queira me dar um oi :)',
+      href: 'https://t.me/cloud_henrique',
+      link: 't.me/cloud_henrique',
+    },
+  ]
+
+  return (
+    <section id='contact' className='py-20'>
+      <h2 className='mb-6 md:mb-20 font-bold text-3xl md:text-5xl text-gray-900 dark:text-gray-300 text-center md:text-left'>
+        Contato
+      </h2>
+      <ul className='grid gap-6 md:grid-cols-2 md:grid-rows-2 md:gap-20'>
+        {contacts.map(contact => (
+          <li key={contact.href} className='flex flex-col gap-3 items-center justify-center text-center'>
+            <p className='text-gray-900 dark:text-gray-400'>{contact.title}</p>
+            <a
+              target='_blank'
+              rel='noreferrer'
+              key={contact.href}
+              href={contact.href}
+              className='flex rounded-lg bg-gradient-to-b p-[2px] w-full md:w-80 from-primary-500 to-primary-500/80 dark:from-primary-300 dark:to-primary-300/50 hover:shadow-md hover:dark:shadow-white/20 transition-all'
+            >
+              <div className='flex gap-3 items-center justify-center bg-gray-50 dark:bg-gray-900 w-full md:w-80 rounded-md p-3'>
+                <contact.icon className='w-6 h-6 text-primary-500 dark:text-primary-300' />
+                <p className='text-transparent bg-clip-text bg-gradient-to-b from-primary-500 to-primary-500/80 dark:from-primary-300 dark:to-primary-300/50'>
+                  {contact.link}
+                </p>
+              </div>
+            </a>
           </li>
         ))}
       </ul>
@@ -242,6 +292,7 @@ export default function Home() {
         <About scrollRef={scrollRef} />
         <Projects />
         <Experiences />
+        <Contact />
       </div>
     </>
   )
