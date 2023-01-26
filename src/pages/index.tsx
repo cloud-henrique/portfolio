@@ -37,7 +37,7 @@ function Hero({ scrollRef }: any) {
 
   return (
     <>
-      <section id='hero' className='flex flex-col md:flex-row items-center hero'>
+      <section id='hero' className='container mx-auto flex flex-col md:flex-row items-center hero'>
         <article className='mt-24 md:mt-0 text-center md:text-left md:w-1/2'>
           <h1 className='font-bold text-4xl md:text-5xl text-gray-900 dark:text-primary-300'>
             Toda boa ideia merece um bom código
@@ -84,7 +84,7 @@ function About({ scrollRef }: any) {
     <section
       ref={scrollRef}
       id='about'
-      className='flex flex-col md:flex-row-reverse items-center py-20 md:py-0 md:min-h-screen'
+      className='container mx-auto flex flex-col md:flex-row-reverse items-center py-20 md:py-0 md:min-h-screen'
     >
       <article className='md:w-1/2 md:flex md:justify-center'>
         <img
@@ -137,7 +137,7 @@ function Projects() {
   ]
 
   return (
-    <section id='projects' className='md:min-h-screen flex flex-col'>
+    <section id='projects' className='container mx-auto md:min-h-screen flex flex-col'>
       <h2 className='font-bold text-3xl md:text-5xl text-gray-900 dark:text-gray-300 text-center md:text-left mt-20'>
         Meus Projetos
       </h2>
@@ -196,7 +196,7 @@ function Experiences() {
   ]
 
   return (
-    <section id='experiences' className='md:min-h-screen'>
+    <section id='experiences' className='container mx-auto md:min-h-screen'>
       <h2 className='font-bold text-3xl md:text-5xl text-gray-900 dark:text-gray-300 pt-20 mb-6 md:mb-10'>
         Experiências
       </h2>
@@ -251,7 +251,7 @@ function Contact() {
   ]
 
   return (
-    <section id='contact' className='py-20'>
+    <section id='contact' className='container mx-auto py-20'>
       <h2 className='mb-6 md:mb-20 font-bold text-3xl md:text-5xl text-gray-900 dark:text-gray-300 text-center md:text-left'>
         Contato
       </h2>
