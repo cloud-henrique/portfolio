@@ -103,8 +103,8 @@ function About({ scrollRef }: any) {
           Instituto Federal do Sudeste de Minas Gerais.
           <br /> <br />
           Acredito que a tecnologia é um bem universal e deve ser acessível a todas as pessoas. Programo
-          profissionalmente há quase 2 anos e atualmente trabalho com React e React Native (e estudando um pouco de
-          UI/UX também).
+          profissionalmente há pouco mais de 2 anos e minha stack principal é TypeScript, React.js, Next.js e React
+          Native (e estudando um pouco de UI/UX também).
         </p>
       </article>
     </section>
@@ -170,9 +170,9 @@ function Projects() {
 function Experiences() {
   const experiences = [
     {
-      title: 'Desenvolvedor React.js na Guiavet (2022 - Atual)',
+      title: 'Desenvolvedor front-end e mobile na Guiavet (2022 - 2023)',
       description:
-        'Desenvolvo funcionalidades para web usando React.js em uma startup especializada no controle de saúde e bem estar de animais de estimação.',
+        'Durante 10 meses, desenvolvi funcionalidades e dei manutenção em plataformas web e mobile usando React, Django e React Native em uma startup especializada no controle de saúde e bem estar de animais de estimação.',
       image: '/static/img/guiavet.png',
       link: 'https://guia.vet',
       alt: 'Guiavet',
@@ -186,7 +186,7 @@ function Experiences() {
       alt: 'Mereo',
     },
     {
-      title: 'Desenvolvedor mobile e front-end na LabCinco/Bigou Delivery (2021)',
+      title: 'Desenvolvedor front-end e mobile na LabCinco/Bigou Delivery (2021)',
       description:
         'Durante 7 meses, desenvolvi funcionalidades e dei manutenção em plataformas web e mobile usando Next, React, React Native e Vue em uma startup de tecnologia do Sudeste de Minas Gerais que tem como principal produto uma plataforma de delivery.',
       image: '/static/img/bigou.png',
