@@ -22,6 +22,18 @@ export function Layout({ children }: LayoutProps) {
     setMounted(true)
   }, [])
 
+  useEffect(() => {
+    if (openMobileMenu) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [openMobileMenu])
+
   if (!mounted) return null
 
   return (
@@ -30,9 +42,18 @@ export function Layout({ children }: LayoutProps) {
 
       <HamburguerMenu open={openMobileMenu} setOpen={setOpenMobileMenu} />
 
-      <MobileHeader open={openMobileMenu} toggleTheme={toggleTheme} isDarkTheme={currentTheme === 'dark'} />
+      <MobileHeader
+        open={openMobileMenu}
+        toggleTheme={toggleTheme}
+        isDarkTheme={currentTheme === 'dark'}
+        setOpen={setOpenMobileMenu}
+      />
 
-      <div className={openMobileMenu ? 'blur' : 'flex-col'}>
+      {openMobileMenu && (
+        <div className='fixed inset-0 bg-black/50 z-40 md:hidden' onClick={() => setOpenMobileMenu(false)} />
+      )}
+
+      <div className={openMobileMenu ? 'pointer-events-none' : 'flex-col'}>
         <main>{children}</main>
         <Footer />
       </div>

@@ -8,9 +8,10 @@ interface MobileHeaderProps {
   open: boolean
   isDarkTheme: boolean
   toggleTheme: () => void
+  setOpen: (open: boolean) => void
 }
 
-export function MobileHeader({ open, isDarkTheme, toggleTheme }: MobileHeaderProps) {
+export function MobileHeader({ open, isDarkTheme, toggleTheme, setOpen }: MobileHeaderProps) {
   return (
     <header
       className={`flex flex-col md:hidden py-14 bg-primary-500 dark:bg-primary-700 z-50 h-screen fixed ease-in-out duration-300 w-3/4 right-0 top-0 ${
@@ -19,7 +20,7 @@ export function MobileHeader({ open, isDarkTheme, toggleTheme }: MobileHeaderPro
     >
       <nav className='flex flex-col w-full gap-6'>
         {links.map(link => (
-          <Link key={link.href} href={link.href}>
+          <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
             <p className='font-medium text-xl text-gray-50 py-3 px-6'>{link.title}</p>
           </Link>
         ))}
