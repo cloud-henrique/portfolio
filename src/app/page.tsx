@@ -65,7 +65,7 @@ function Hero({ scrollRef }: { scrollRef: React.RefObject<HTMLElement> }) {
         </article>
       </section>
 
-      <span className='flex items-center justify-center justify-self-end mt-10 md:-mt-10'>
+      <span className='flex items-center justify-center mt-10 md:-mt-10'>
         <ArrowDownCircle
           onClick={() => scrollRef?.current?.scrollIntoView()}
           className='h-8 w-8 text-primary-500 dark:text-emerald-500 animate-bounce cursor-pointer'
