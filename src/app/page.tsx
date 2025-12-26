@@ -1,17 +1,13 @@
-/* eslint-disable max-len */
-/* eslint-disable @next/next/no-img-element */
-import { useRef } from 'react'
+'use client'
 
+import { useRef } from 'react'
 import Lottie from 'lottie-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowDownCircle, ExternalLink, GitHub, Linkedin, Mail, Send } from 'react-feather'
+import laptopAnimation from '@/assets/programming-computer.json'
 
-import { Head } from 'components/Head'
-
-import laptopAnimation from 'assets/programming-computer.json'
-
-function Hero({ scrollRef }: any) {
+function Hero({ scrollRef }: { scrollRef: React.RefObject<HTMLElement> }) {
   const socials = [
     {
       icon: Mail,
@@ -55,11 +51,11 @@ function Hero({ scrollRef }: any) {
           </span>
 
           <div className='mt-16 flex flex-col md:flex-row gap-6'>
-            <Link href='#contact'>
-              <div className='btn-primary'>Contato</div>
+            <Link href='#contact' className='btn-primary'>
+              Contato
             </Link>
-            <Link href='#projects'>
-              <div className='btn-secondary'>Projetos</div>
+            <Link href='#projects' className='btn-secondary'>
+              Projetos
             </Link>
           </div>
         </article>
@@ -79,7 +75,7 @@ function Hero({ scrollRef }: any) {
   )
 }
 
-function About({ scrollRef }: any) {
+function About({ scrollRef }: { scrollRef: React.RefObject<HTMLElement> }) {
   return (
     <section
       ref={scrollRef}
@@ -87,10 +83,13 @@ function About({ scrollRef }: any) {
       className='container mx-auto flex flex-col md:flex-row-reverse items-center py-20 md:py-0 md:min-h-screen'
     >
       <article className='md:w-1/2 md:flex md:justify-center'>
-        <img
+        <Image
           alt='Cláudio Henrique'
           src='/static/img/claudio-henrique.png'
+          width={256}
+          height={256}
           className='rounded-full w-32 h-32 md:w-64 md:h-64'
+          priority
         />
       </article>
 
@@ -144,8 +143,8 @@ function Projects() {
 
       <ul className='mt-6 md:mt-20 flex gap-6 md:gap-16 flex-wrap justify-center md:justify-start'>
         {projects.map(project => (
-          <Link key={project.href} href={project.href} target='_blank'>
-            <li className='w-80 cursor-pointer hover:animate-pulse'>
+          <li key={project.href}>
+            <Link href={project.href} target='_blank' className='block w-80 cursor-pointer hover:animate-pulse'>
               <Image
                 width={312}
                 height={176}
@@ -154,13 +153,13 @@ function Projects() {
                 title={project.alt}
                 className='rounded-lg'
               />
-              <span className='flex  w-full justify-between mt-2 md:mt-4 mb-3 md:mb-2'>
+              <span className='flex w-full justify-between mt-2 md:mt-4 mb-3 md:mb-2'>
                 <h3 className='font-bold text-xl text-gray-700 dark:text-primary-50'>{project.title}</h3>
                 <ExternalLink className='w-6 h-6 text-gray-700 dark:text-primary-50' />
               </span>
               <p className='text-sm md:text-base text-gray-700 dark:text-gray-400'>{project.description}</p>
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
     </section>
@@ -210,9 +209,11 @@ function Experiences() {
               <h3 className='font-bold text-xl text-gray-900 dark:text-gray-300'>{experience.title}</h3>
               <p className='text-gray-700 dark:text-gray-400'>{experience.description}</p>
             </article>
-            <img
+            <Image
               alt={experience.alt}
               src={experience.image}
+              width={160}
+              height={160}
               className='rounded-lg hidden md:flex w-40 h-40 md:ml-auto self-center'
             />
           </li>
@@ -262,7 +263,6 @@ function Contact() {
             <a
               target='_blank'
               rel='noreferrer'
-              key={contact.href}
               href={contact.href}
               className='flex rounded-lg bg-gradient-to-b p-[2px] w-full md:w-80 from-primary-500 to-primary-500/80 dark:from-primary-300 dark:to-primary-300/50 hover:shadow-md hover:dark:shadow-white/20 transition-all'
             >
@@ -284,16 +284,12 @@ export default function Home() {
   const scrollRef = useRef<null | HTMLElement>(null)
 
   return (
-    <>
-      <Head title='Cláudio Henrique' />
-
-      <div className='transition-all duration-300 flex-col px-6 md:px-14 bg-gray-50 dark:bg-gray-900'>
-        <Hero scrollRef={scrollRef} />
-        <About scrollRef={scrollRef} />
-        <Projects />
-        <Experiences />
-        <Contact />
-      </div>
-    </>
+    <div className='transition-all duration-300 flex-col px-6 md:px-14 bg-gray-50 dark:bg-gray-900'>
+      <Hero scrollRef={scrollRef} />
+      <About scrollRef={scrollRef} />
+      <Projects />
+      <Experiences />
+      <Contact />
+    </div>
   )
 }

@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+'use client'
+
 import { X, Menu } from 'react-feather'
 
 export interface HamburguerMenuProps {

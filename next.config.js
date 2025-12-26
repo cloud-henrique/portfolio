@@ -1,10 +1,16 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['github.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'github.com',
+        pathname: '/**',
+      },
+    ],
     formats: ['image/webp', 'image/avif'],
   },
-  experimental: {
-    forceSwcTransforms: true,
-  },
 }
+
+module.exports = nextConfig

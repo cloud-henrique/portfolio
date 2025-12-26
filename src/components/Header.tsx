@@ -1,8 +1,8 @@
-/* eslint-disable max-len */
+'use client'
+
 import Link from 'next/link'
 import { Moon, Sun } from 'react-feather'
-
-import { Switch } from 'components'
+import { Switch } from '@/components'
 
 interface HeaderProps {
   toggleTheme: () => void

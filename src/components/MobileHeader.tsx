@@ -1,8 +1,8 @@
-/* eslint-disable max-len */
+'use client'
+
 import Link from 'next/link'
 import { Moon, Sun } from 'react-feather'
-
-import { links, Switch } from 'components'
+import { links, Switch } from '@/components'
 
 interface MobileHeaderProps {
   open: boolean

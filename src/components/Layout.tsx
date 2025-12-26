@@ -1,8 +1,8 @@
+'use client'
+
 import { ReactNode, useEffect, useState } from 'react'
-
 import { useTheme } from 'next-themes'
-
-import { Footer, HamburguerMenu, Header, MobileHeader } from 'components'
+import { Footer, HamburguerMenu, Header, MobileHeader } from '@/components'
 
 interface LayoutProps {
   children: ReactNode
