@@ -23,7 +23,7 @@ export function Header({ toggleTheme, isDarkTheme }: HeaderProps) {
         <ul className='flex items-center gap-8 flex-1 w-full justify-center'>
           {links.map(link => (
             <li key={link.href} className='font-medium text-lg text-gray-50'>
-              <Link scroll={false} href={link.href}>
+              <Link scroll={true} href={link.href}>
                 {link.title}
               </Link>
             </li>
