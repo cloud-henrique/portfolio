@@ -11,7 +11,7 @@ function Hero({ scrollRef }: { scrollRef: React.RefObject<HTMLElement> }) {
   const socials = [
     {
       icon: Mail,
-      href: 'mailto: 00claudio.henrique@gmail.com',
+      href: 'mailto:00claudio.henrique@gmail.com',
       label: 'Acessar o e-mail',
     },
     {
