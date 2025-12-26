@@ -85,7 +85,7 @@ function About({ scrollRef }: { scrollRef: React.RefObject<HTMLElement> }) {
       <article className='md:w-1/2 md:flex md:justify-center'>
         <Image
           alt='Cláudio Henrique'
-          src='/static/img/claudio-henrique.png'
+          src='/static/img/claudio-henrique.jpeg'
           width={256}
           height={256}
           className='rounded-full w-32 h-32 md:w-64 md:h-64'
@@ -98,12 +98,15 @@ function About({ scrollRef }: { scrollRef: React.RefObject<HTMLElement> }) {
           Olá, meu nome é <br /> <span className='text-primary-500 dark:text-primary-300'>Cláudio Henrique</span>!
         </h2>
         <p className='text-gray-700 dark:text-gray-400 mt-6 md:mt-12'>
-          Sou desenvolvedor front-end e mobile morando em Rio Pomba - MG, e estou cursando Ciência da Computação no
-          Instituto Federal do Sudeste de Minas Gerais.
+          Desenvolvedor Fullstack com 4+ anos de experiência em aplicações web e mobile, atualmente em Juiz de Fora -
+          MG. Cursei Ciência da Computação no Instituto Federal do Sudeste de Minas Gerais (2018-2022).
           <br /> <br />
-          Acredito que a tecnologia é um bem universal e deve ser acessível a todas as pessoas. Programo
-          profissionalmente há pouco mais de 2 anos e minha stack principal é TypeScript, React.js, Next.js e React
-          Native (e estudando um pouco de UI/UX também).
+          Especializado em criar soluções modernas e acessíveis para healthtech, HR tech e delivery. Minha stack
+          principal inclui TypeScript, React.js, Next.js, React Native, Angular, Laravel e PHP. Utilizo ferramentas de
+          IA como Claude Code, Wispr Flow e AntiGravity para otimizar desenvolvimento e elevar a qualidade do código.
+          <br /> <br />
+          Acredito que tecnologia deve ser acessível a todos. Meu foco está em clean code, acessibilidade (a11y) e
+          performance, criando produtos que realmente fazem diferença na vida das pessoas.
         </p>
       </article>
     </section>
@@ -168,6 +171,14 @@ function Projects() {
 
 function Experiences() {
   const experiences = [
+    {
+      title: 'Fullstack Developer na Cia Cuidadores (2024 - o momento)',
+      description:
+        'Desenvolvedor fullstack responsável por todo o ciclo de desenvolvimento da plataforma de cuidados com idosos, atuando em frontend (Angular, TypeScript), backend (Laravel, PHP), banco de dados (MySQL) e automação (Docker, n8n, Groq LLM).',
+      image: '/static/img/cia-cuidadores.jpg',
+      link: 'https://guia.vet',
+      alt: 'Guiavet',
+    },
     {
       title: 'Desenvolvedor front-end e mobile na Guiavet (2022 - 2023)',
       description:
