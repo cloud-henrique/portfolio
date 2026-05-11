@@ -8,7 +8,7 @@ import { WorkflowSection } from '@/components/sections/WorkflowSection'
 
 export default function Home() {
   return (
-    <div className='bg-offwhite text-gray-950 transition-colors duration-300 dark:bg-graphite dark:text-gray-50'>
+    <div className='bg-offwhite text-gray-950 transition-colors duration-300 dark:bg-[#111318] dark:text-gray-50'>
       <HeroSection />
       <AboutSection />
       <StackSection />

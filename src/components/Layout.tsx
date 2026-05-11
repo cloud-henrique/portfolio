@@ -24,13 +24,13 @@ export function Layout({ children }: LayoutProps) {
 
   useEffect(() => {
     if (openMobileMenu) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflowY = 'hidden'
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflowY = ''
     }
 
     return () => {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflowY = ''
     }
   }, [openMobileMenu])
 

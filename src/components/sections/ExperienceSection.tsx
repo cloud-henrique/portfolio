@@ -5,7 +5,7 @@ export function ExperienceSection() {
   return (
     <section
       id='experience'
-      className='border-y border-gray-200 bg-white/70 py-24 dark:border-white/10 dark:bg-gray-950/40'
+      className='border-y border-primary-700/10 bg-white/55 py-24 dark:border-primary-300/10 dark:bg-white/[0.03]'
     >
       <div className='container mx-auto'>
         <SectionHeading
@@ -18,7 +18,7 @@ export function ExperienceSection() {
           {experiences.map(experience => (
             <article
               key={`${experience.company}-${experience.period}`}
-              className='rounded-lg border border-gray-200 bg-gray-50 p-6 dark:border-white/10 dark:bg-gray-900'
+              className='border-t border-gray-200 pt-6 first:border-t-0 first:pt-0 dark:border-white/10'
             >
               <div className='flex flex-col gap-2 md:flex-row md:items-start md:justify-between'>
                 <div>

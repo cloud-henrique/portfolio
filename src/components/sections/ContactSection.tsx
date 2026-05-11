@@ -40,7 +40,7 @@ export function ContactSection() {
             href={contact.href}
             target={contact.href.startsWith('mailto:') ? undefined : '_blank'}
             rel={contact.href.startsWith('mailto:') ? undefined : 'noreferrer'}
-            className='rounded-lg border border-gray-200 bg-white p-5 transition hover:border-primary-700 hover:shadow-sm dark:border-white/10 dark:bg-gray-900 dark:hover:border-primary-300'
+            className='border border-gray-200 bg-white p-5 transition-colors hover:border-primary-700 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-primary-300'
           >
             <contact.icon className='h-6 w-6 text-primary-700 dark:text-primary-300' />
             <h3 className='mt-4 font-bold text-gray-950 dark:text-gray-50'>{contact.title}</h3>

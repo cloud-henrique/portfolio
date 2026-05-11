@@ -17,10 +17,7 @@ export function WorkflowSection() {
 
       <div className='mt-12 grid gap-5 md:grid-cols-3'>
         {workflowSteps.map((step, index) => (
-          <article
-            key={step.title}
-            className='rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-gray-900'
-          >
+          <article key={step.title} className='border-t border-gray-200 pt-6 dark:border-white/10'>
             <span className='text-sm font-semibold text-primary-800 dark:text-primary-200'>
               {String(index + 1).padStart(2, '0')}
             </span>
