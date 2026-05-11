@@ -14,7 +14,7 @@ interface MobileHeaderProps {
 export function MobileHeader({ open, isDarkTheme, toggleTheme, setOpen }: MobileHeaderProps) {
   return (
     <header
-      className={`flex flex-col md:hidden py-14 bg-primary-500 dark:bg-primary-700 z-50 h-screen fixed ease-in-out duration-300 w-3/4 right-0 top-0 ${
+      className={`fixed right-0 top-0 z-50 flex h-screen w-3/4 flex-col bg-primary-800 py-14 duration-300 ease-in-out dark:bg-gray-950 md:hidden ${
         open ? 'translate-x-0' : 'translate-x-full'
       }`}
     >

@@ -11,10 +11,10 @@ export function Switch({ checked, onChange }: SwitchProps) {
       checked={checked}
       onChange={onChange}
       className={`${
-        checked ? 'bg-emerald-500' : 'bg-neutral-400'
+        checked ? 'bg-primary-700' : 'bg-neutral-400'
       } relative inline-flex h-6 w-11 items-center rounded-full`}
     >
-      <span className='sr-only'>Enable dark theme</span>
+      <span className='sr-only'>Alternar tema escuro</span>
 
       <span
         className={`${

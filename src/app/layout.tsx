@@ -11,9 +11,18 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://claudiohenrique.vercel.app'),
-  title: 'Cláudio Henrique',
-  description: 'Desenvolvedor front-end e mobile - Portfolio pessoal',
-  keywords: ['desenvolvedor', 'front-end', 'mobile', 'react', 'next.js', 'typescript'],
+  title: 'Cláudio Henrique | Fullstack Developer',
+  description:
+    'Desenvolvedor fullstack com experiência em Angular, Laravel, Next.js, Docker, sistemas web, automação e AI-assisted development.',
+  keywords: [
+    'desenvolvedor fullstack',
+    'Angular',
+    'Laravel',
+    'Next.js',
+    'Docker',
+    'TypeScript',
+    'AI-assisted development',
+  ],
   authors: [{ name: 'Cláudio Henrique' }],
   creator: 'Cláudio Henrique',
   icons: {
@@ -40,12 +49,28 @@ export const metadata: Metadata = {
     canonical: 'https://claudiohenrique.vercel.app',
   },
   openGraph: {
-    title: 'Cláudio Henrique',
-    description: 'Desenvolvedor front-end e mobile',
+    title: 'Cláudio Henrique | Fullstack Developer',
+    description:
+      'Desenvolvedor fullstack com experiência em Angular, Laravel, Next.js, Docker, sistemas web, automação e AI-assisted development.',
     url: 'https://claudiohenrique.vercel.app',
     siteName: 'Cláudio Henrique Portfolio',
+    images: [
+      {
+        url: '/preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Cláudio Henrique | Fullstack Developer',
+      },
+    ],
     locale: 'pt_BR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cláudio Henrique | Fullstack Developer',
+    description:
+      'Desenvolvedor fullstack com experiência em Angular, Laravel, Next.js, Docker, sistemas web, automação e AI-assisted development.',
+    images: ['/preview.png'],
   },
 }
 
