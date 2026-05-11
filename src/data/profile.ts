@@ -41,6 +41,10 @@ export const cases = [
     stack: ['Next.js', 'Supabase', 'Tailwind', 'shadcn/ui', 'Vercel'],
     href: profile.twobirubes,
     status: 'Case público',
+    image: {
+      src: '/static/img/twobirubes.png',
+      alt: 'Preview do cardápio digital Twobirubes',
+    },
   },
   {
     title: 'Plataforma de gestão de cuidados',
