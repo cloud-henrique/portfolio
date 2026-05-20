@@ -26,6 +26,7 @@ Single-page portfolio built with Next.js 15 App Router. There are no API routes 
 **Layout**: [src/components/Layout.tsx](src/components/Layout.tsx) is a client component that owns theme state (`next-themes`) and mobile menu state. It wraps every page via [src/app/layout.tsx](src/app/layout.tsx). The `!mounted` early-return prevents hydration mismatches for the theme toggle.
 
 **Component organization**:
+
 - `src/components/sections/` — one file per page section
 - `src/components/ui/` — reusable primitives (`Badge`, `SectionHeading`)
 - `src/components/*.tsx` — layout-level components (Header, Footer, MobileHeader, HamburguerMenu, Switch)

@@ -11,8 +11,8 @@ export function WorkflowSection() {
       />
 
       <p className='mt-6 max-w-3xl text-base leading-7 text-gray-700 dark:text-gray-300 md:text-lg'>
-        Uso Claude Code + Codex para: especificação (SDD), code review, refatoração e documentação. A
-        responsabilidade sobre arquitetura e regras de negócio continua sendo minha.
+        Uso Claude Code + Codex para: especificação (SDD), code review, refatoração e documentação. A responsabilidade
+        sobre arquitetura e regras de negócio continua sendo minha.
       </p>
 
       <div className='mt-12 grid gap-5 md:grid-cols-3'>

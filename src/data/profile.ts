@@ -134,7 +134,6 @@ export const workflowSteps = [
   },
   {
     title: 'Validação e evolução incremental',
-    description:
-      'Testes manuais, ajustes de performance, melhoria contínua. Foco em manutenção real preventiva.',
+    description: 'Testes manuais, ajustes de performance, melhoria contínua. Foco em manutenção real preventiva.',
   },
 ]
