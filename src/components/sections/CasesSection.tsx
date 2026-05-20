@@ -12,8 +12,8 @@ export function CasesSection() {
     <section id='cases' className='container mx-auto py-24'>
       <SectionHeading
         eyebrow='Cases selecionados'
-        title='Poucos cases, mais contexto.'
-        description='Uma seleção focada em sistemas web reais, atuação profissional e direção técnica em desenvolvimento.'
+        title='O que já construí.'
+        description='Escolhi poucos projetos e dei contexto real pra cada um: o que eu fiz, com o quê e como.'
       />
 
       <div className='mt-12 grid gap-6 lg:grid-cols-[1.35fr_0.9fr]'>
@@ -33,9 +33,6 @@ export function CasesSection() {
             )}
           </div>
 
-          <p className='mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary-700 dark:text-primary-300'>
-            Case principal
-          </p>
           <h3 className='text-3xl font-bold text-gray-950 dark:text-gray-50 md:text-4xl'>{featuredCase.title}</h3>
           <p className='mt-2 text-lg font-medium text-gray-800 dark:text-gray-200'>{featuredCase.subtitle}</p>
           <p className='mt-6 max-w-2xl leading-8 text-gray-700 dark:text-gray-300'>{featuredCase.description}</p>

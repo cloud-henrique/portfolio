@@ -28,9 +28,8 @@ export function AboutSection() {
             VPS/Linux e integrações com APIs externas.
           </p>
           <p>
-            Também venho incorporando IA ao fluxo de desenvolvimento de forma pragmática, usando ferramentas como apoio
-            para especificação, planejamento técnico, revisão, refatoração e produtividade. Sem substituir entendimento
-            de regra de negócio, arquitetura e manutenção.
+            Uso Claude Code e Codex no dia a dia: para especificação técnica com SDD, code review, planejamento e
+            refatoração. Priorizando clareza, manutenibilidade, e evitando retrabalho.
           </p>
         </div>
       </div>

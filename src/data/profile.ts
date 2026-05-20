@@ -27,7 +27,7 @@ export const stackGroups = [
   },
   {
     title: 'Workflow',
-    items: ['Git', 'documentação técnica', 'PRD/SDD', 'AI-assisted development'],
+    items: ['Git', 'SDD', 'Claude Code', 'Codex', 'documentação técnica'],
   },
 ]
 
@@ -123,15 +123,18 @@ export const experiences = [
 
 export const workflowSteps = [
   {
-    title: 'Entendimento do problema',
-    description: 'Refinamento de requisitos, regras de negócio e exceções com stakeholders.',
+    title: 'Especificação antes de código',
+    description:
+      'Uso SDD (spec-driven development): antes de implementar, escrevo uma spec técnica. Alinho escopo com stakeholders, evito retrabalho e gero documentação útil.',
   },
   {
-    title: 'Implementação sustentável',
-    description: 'Código legível, componentes reutilizáveis, APIs claras e atenção a manutenção.',
+    title: 'Implementação com revisão contínua',
+    description:
+      'Código legível, manutenível e seguro. Revisão contínua para garantir qualidade, clareza e aderência à especificação.',
   },
   {
-    title: 'Validação e melhoria contínua',
-    description: 'Testes manuais/técnicos, revisão, ajustes de performance e evolução incremental.',
+    title: 'Validação e evolução incremental',
+    description:
+      'Testes manuais, ajustes de performance, melhoria contínua. Foco em manutenção real preventiva.',
   },
 ]

@@ -10,8 +10,8 @@ export function StackSection() {
       <div className='container mx-auto'>
         <SectionHeading
           eyebrow='Stack'
-          title='Ferramentas para construir, operar e evoluir.'
-          description='A stack principal combina frontend, backend, dados, infraestrutura e workflows de desenvolvimento.'
+          title='O que uso no dia a dia.'
+          description='Front, back, banco, infra e automação.'
         />
 
         <div className='mt-12 grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3'>

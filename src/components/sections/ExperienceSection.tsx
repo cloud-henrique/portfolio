@@ -10,8 +10,8 @@ export function ExperienceSection() {
       <div className='container mx-auto'>
         <SectionHeading
           eyebrow='Experiência'
-          title='Trajetória em produto, operação e entrega.'
-          description='Experiências resumidas com foco no que sustenta a narrativa atual do portfólio.'
+          title='Onde trabalhei.'
+          description='Histórico resumido, com foco no que é relevante para o trabalho que faço hoje.'
         />
 
         <div className='mt-12 grid gap-5'>

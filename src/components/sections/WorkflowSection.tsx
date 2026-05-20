@@ -6,18 +6,18 @@ export function WorkflowSection() {
     <section id='workflow' className='container mx-auto py-24'>
       <SectionHeading
         eyebrow='Como trabalho'
-        title='Da demanda ambígua à entrega validada.'
+        title='Metodologia que sigo.'
         description='Gosto de transformar demandas ambíguas em entregas bem definidas. Meu fluxo combina entendimento do problema, documentação objetiva, implementação incremental, revisão técnica e validação prática.'
       />
 
       <p className='mt-6 max-w-3xl text-base leading-7 text-gray-700 dark:text-gray-300 md:text-lg'>
-        Uso IA como apoio para acelerar planejamento, revisão, refatoração e documentação, mantendo a responsabilidade
-        técnica sobre decisões de arquitetura, regras de negócio e manutenção.
+        Uso Claude Code + Codex para: especificação (SDD), code review, refatoração e documentação. A
+        responsabilidade sobre arquitetura e regras de negócio continua sendo minha.
       </p>
 
       <div className='mt-12 grid gap-5 md:grid-cols-3'>
         {workflowSteps.map((step, index) => (
-          <article key={step.title} className='border-t border-gray-200 pt-6 dark:border-white/10'>
+          <article key={step.title} className='border-t pt-6 border-primary-700/60 dark:border-primary-300/70'>
             <span className='text-sm font-semibold text-primary-800 dark:text-primary-200'>
               {String(index + 1).padStart(2, '0')}
             </span>
