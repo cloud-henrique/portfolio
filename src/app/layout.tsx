@@ -10,7 +10,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://claudiohenrique.vercel.app'),
+  metadataBase: new URL('https://www.claudiohenrique.dev.br'),
   title: 'Cláudio Henrique | Fullstack Developer',
   description:
     'Desenvolvedor fullstack com experiência em Angular, Laravel, Next.js, Docker, sistemas web, automação e AI-assisted development.',
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
   },
   manifest: '/favicons/manifest.json',
   alternates: {
-    canonical: 'https://claudiohenrique.vercel.app',
+    canonical: 'https://www.claudiohenrique.dev.br',
   },
   openGraph: {
     title: 'Cláudio Henrique | Fullstack Developer',
     description:
       'Desenvolvedor fullstack com experiência em Angular, Laravel, Next.js, Docker, sistemas web, automação e AI-assisted development.',
-    url: 'https://claudiohenrique.vercel.app',
+    url: 'https://www.claudiohenrique.dev.br',
     siteName: 'Cláudio Henrique Portfolio',
     images: [
       {
