@@ -1,0 +1,52 @@
+schema: spec-driven
+
+context: |
+  Language: pt-BR
+  All artifacts must be written in pt-BR.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+
+  Portfolio/site pessoal de Cláudio Henrique — single-page estático, sem backend.
+
+  Stack:
+  - Next.js 15.5.9 (App Router), React 18.3.1, TypeScript 5.8.3
+  - Tailwind CSS 3.4.17 (dark mode via class), next-themes 0.4.6
+  - @headlessui/react 2.2.9, react-feather 2.0.10
+  - ESLint 9 rodando via `next lint` com `.eslintrc.json` legado (NÃO flat config)
+  - Deploy automático na Vercel a partir de main (projeto `portfolio`,
+    team `cludio-henriques-projects`); domínio www.claudiohenrique.dev.br
+
+  Arquitetura:
+  - Sem API routes e sem rotas dinâmicas. Rotas geradas: /, /_not-found,
+    /robots.txt, /sitemap.xml — todas estáticas (prerendered).
+  - Todo o conteúdo vive em src/data/profile.ts; as sections só consomem.
+  - src/app/page.tsx compõe sete sections: Hero → About → Stack → Cases →
+    Experience → Workflow → Contact.
+  - src/components/Layout.tsx é client component e detém o estado de tema
+    (next-themes) e do menu mobile. O early-return em `!mounted` evita
+    hydration mismatch no toggle de tema.
+  - Organização: src/components/sections/, src/components/ui/,
+    src/components/*.tsx (layout) e src/components/index.tsx (barrel).
+
+  Validação obrigatória antes de finalizar qualquer alteração relevante:
+  `rtk proxy npm run lint`, depois `npm run type-check`, depois `npm run build`.
+  O lint roda sempre via `rtk proxy` — o hook do rtk reescreve `npm run lint`,
+  chama o ESLint direto e falha com "couldn't find an eslint.config.(js|mjs|cjs)",
+  porque o projeto usa `.eslintrc.json` legado e o ESLint 9 só lê flat config.
+
+  Restrições de conteúdo e visual:
+  - Conteúdo todo em pt-BR; tom profissional, direto, sóbrio.
+  - Não afirmar graduação concluída.
+  - Cases sem URL pública permanecem descritivos, sem link nem dado de cliente.
+  - Identidade visual: base neutra (grafite / off-white), acento terracota.
+  - Responsivo em mobile, tablet e desktop; preservar acessibilidade e
+    navegação por teclado.
+  - Evitar adicionar bibliotecas sem necessidade clara.
+
+rules:
+  proposal:
+    - Sempre listar explicitamente o que quebra e o que exige ação manual,
+      separando breaking changes de depreciações apenas avisadas.
+    - Citar a versão exata em que cada mudança entra em vigor.
+  tasks:
+    - Cada task deve terminar em um estado verificável por lint, type-check
+      ou build — nunca deixar o repo sem buildar entre tasks.
