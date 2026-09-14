@@ -73,10 +73,20 @@ Nao afirmar graduacao concluida. Se formacao for mencionada, usar "Ciencia da Co
 Antes de finalizar alteracoes relevantes, rodar:
 
 ```bash
-npm run lint
+rtk proxy npm run lint
 npm run type-check
 npm run build
 ```
+
+O lint roda sempre via `rtk proxy`, nunca como `npm run lint` direto. O hook do rtk reescreve o comando e chama o ESLint diretamente, que falha com:
+
+```
+ESLint couldn't find an eslint.config.(js|mjs|cjs) file.
+```
+
+O projeto ainda usa o `.eslintrc.json` legado e o ESLint 9 so le flat config. O `next lint` traduz o formato antigo, entao o script esta correto; quem quebra e o proxy contornando o `next lint`. O `rtk proxy` executa o comando sem filtro e passa.
+
+O `next lint` foi descontinuado e sera removido no Next.js 16. Migrar com `npx @next/codemod@canary next-lint-to-eslint-cli .` gera flat config e dispensa esse contorno.
 
 Se algum comando nao funcionar por problema pre-existente ou configuracao do projeto, registrar:
 

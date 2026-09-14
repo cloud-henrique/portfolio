@@ -15,6 +15,23 @@ npm run format       # Prettier format all TS/TSX/JSON/MD files
 
 Before finalizing any relevant change, run `lint`, `type-check`, and `build` in sequence. If a command fails due to a pre-existing issue, document the command, error, likely cause, and suggested fix.
 
+### Always run lint without the rtk proxy
+
+```bash
+rtk proxy npm run lint     # correct
+npm run lint               # wrong — the rtk hook rewrites this and it fails
+```
+
+The rtk hook transparently rewrites `npm run lint` and invokes ESLint directly, which fails here:
+
+```
+ESLint couldn't find an eslint.config.(js|mjs|cjs) file.
+```
+
+This project still uses the legacy `.eslintrc.json`, and ESLint 9 only reads flat config. `next lint` translates the legacy format, so the script itself is fine — it is the proxy bypassing `next lint` that breaks. `rtk proxy` runs the raw command unfiltered and passes (`✔ No ESLint warnings or errors`).
+
+Note that `next lint` is deprecated and removed in Next.js 16. Migrating with `npx @next/codemod@canary next-lint-to-eslint-cli .` produces a flat config and makes this workaround unnecessary.
+
 ## Architecture
 
 Single-page portfolio built with Next.js 15 App Router. There are no API routes or dynamic segments — the entire site is one static page.
