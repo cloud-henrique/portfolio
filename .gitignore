@@ -36,3 +36,6 @@ yarn-error.log*
 # vercel
 .vercel
 .env*
+
+# claude code (config local de maquina)
+.claude/settings.local.json

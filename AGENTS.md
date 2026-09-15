@@ -70,23 +70,21 @@ Nao afirmar graduacao concluida. Se formacao for mencionada, usar "Ciencia da Co
 
 ## 7. Validacao
 
-Antes de finalizar alteracoes relevantes, rodar:
+Antes de finalizar alteracoes relevantes, rodar as tres em sequencia:
 
 ```bash
-rtk proxy npm run lint
+npm run lint
 npm run type-check
 npm run build
 ```
 
-O lint roda sempre via `rtk proxy`, nunca como `npm run lint` direto. O hook do rtk reescreve o comando e chama o ESLint diretamente, que falha com:
+As tres precisam ser executadas explicitamente. A partir do Next.js 16 o
+`next build` nao roda mais ESLint, entao o lint virou um passo separado. Um build
+verde nao diz nada sobre o lint, e o projeto nao tem CI, entao a sequencia acima
+e a unica verificacao que existe.
 
-```
-ESLint couldn't find an eslint.config.(js|mjs|cjs) file.
-```
-
-O projeto ainda usa o `.eslintrc.json` legado e o ESLint 9 so le flat config. O `next lint` traduz o formato antigo, entao o script esta correto; quem quebra e o proxy contornando o `next lint`. O `rtk proxy` executa o comando sem filtro e passa.
-
-O `next lint` foi descontinuado e sera removido no Next.js 16. Migrar com `npx @next/codemod@canary next-lint-to-eslint-cli .` gera flat config e dispensa esse contorno.
+O lint roda como `npm run lint`, direto. O ESLint le o `eslint.config.mjs`
+(flat config) e o script chama o ESLint CLI.
 
 Se algum comando nao funcionar por problema pre-existente ou configuracao do projeto, registrar:
 
@@ -94,3 +92,13 @@ Se algum comando nao funcionar por problema pre-existente ou configuracao do pro
 - erro observado;
 - causa provavel;
 - sugestao de correcao.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
