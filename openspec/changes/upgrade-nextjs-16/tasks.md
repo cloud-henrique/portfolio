@@ -1,9 +1,9 @@
 ## 1. Preparação e linha de base
 
-- [ ] 1.1 Confirmar working tree limpo com `git status --short` sem saída, em branch dedicada criada a partir de `main`, e verificar que `node -v` retorna versão >= 20.9.0 conforme exigido pelo `engines.node` do `next@16.3.5`
-- [ ] 1.2 Rodar a sequência de validação atual (`rtk proxy npm run lint`, `npm run type-check`, `npm run build`) e verificar que as três passam antes de qualquer alteração, estabelecendo a linha de base
-- [ ] 1.3 Criar o script de paridade em `scripts/` que extrai da saída construída os cinco valores de referência — `canonical`, `og:url` e `og:image` do HTML, mais o conteúdo de `sitemap.xml` e `robots.txt` — e verificar que ele roda sobre o build atual sem erro, usando apenas shell e utilitários já disponíveis, sem adicionar dependência
-- [ ] 1.4 Executar o script no estado atual, gravar a referência fora da árvore versionada e verificar que os cinco valores foram capturados de forma legível, para a comparação da seção 6
+- [x] 1.1 Confirmar working tree limpo com `git status --short` sem saída, em branch dedicada criada a partir de `main`, e verificar que `node -v` retorna versão >= 20.9.0 conforme exigido pelo `engines.node` do `next@16.3.5`
+- [x] 1.2 Rodar a sequência de validação atual (`rtk proxy npm run lint`, `npm run type-check`, `npm run build`) e verificar que as três passam antes de qualquer alteração, estabelecendo a linha de base
+- [x] 1.3 Criar o script de paridade em `scripts/` que extrai da saída construída os cinco valores de referência — `canonical`, `og:url` e `og:image` do HTML, mais o conteúdo de `sitemap.xml` e `robots.txt` — e verificar que ele roda sobre o build atual sem erro, usando apenas shell e utilitários já disponíveis, sem adicionar dependência
+- [x] 1.4 Executar o script no estado atual, gravar a referência fora da árvore versionada e verificar que os cinco valores foram capturados de forma legível, para a comparação da seção 6
 
 ## 2. Upgrade do Next.js via codemod
 
