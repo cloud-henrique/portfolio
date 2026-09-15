@@ -39,8 +39,8 @@ Esta seção vem antes do React 19 e antes de qualquer `lint:fix`: o config gera
 
 - [x] 6.1 Rodar o script de paridade contra a referência capturada em 1.4 e verificar que `canonical`, `og:url` e `og:image` seguem apontando para `https://www.claudiohenrique.dev.br`, sem alteração
 - [x] 6.2 Verificar na mesma execução que `sitemap.xml` e `robots.txt` são idênticos à referência, exceto pelo `lastmod` do sitemap, que muda a cada build por usar `new Date()` — o script deve ignorar esse campo ou sinalizá-lo como divergência esperada
-- [ ] 6.3 Rodar `npm run dev` e verificar nas sete sections que o CSS do Tailwind foi aplicado corretamente sob Turbopack, alternando entre tema claro e escuro e confirmando que o toggle não produz hydration mismatch no console
-- [ ] 6.4 Verificar navegação por teclado e foco visível no `Switch` de tema e nos links do header, confirmando que a acessibilidade não regrediu com o React 19
+- [x] 6.3 Rodar `npm run dev` e verificar nas sete sections que o CSS do Tailwind foi aplicado corretamente sob Turbopack, alternando entre tema claro e escuro e confirmando que o toggle não produz hydration mismatch no console
+- [x] 6.4 Verificar navegação por teclado e foco visível no `Switch` de tema e nos links do header, confirmando que a acessibilidade não regrediu com o React 19
 
 ## 7. Documentação e metadados do projeto
 

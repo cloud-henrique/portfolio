@@ -83,6 +83,10 @@ Nem tudo que tem major disponível deve subir junto. Três tetos, cada um por um
 
 **ESLint fica em `^9.39.5`.** O `eslint@10.10.0` instala, mas forçando peer override em três plugins transitivos do `eslint-config-next`: `eslint-plugin-react` (teto `^9.7`), `eslint-plugin-jsx-a11y` (teto `^9`) e `eslint-plugin-import` (teto `^9`). Os três já estão na última versão publicada, ou seja, o upstream ainda não entregou suporte ao ESLint 10 — não é atraso deste projeto. Subir agora significaria rodar a stack de lint inteira fora do contrato declarado.
 
+Verificado de novo durante a execução, com dry-run: `npm install eslint@10.10.0` emite `npm warn ERESOLVE overriding peer dependency` para `eslint-plugin-import`, e com `--strict-peer-deps` falha com erro duro. A decisão se sustenta.
+
+O que mudou desde o planejamento é a leitura do custo: o `9.39.5` carrega a dist-tag `maintenance` e o npm emite `npm warn deprecated eslint@9.39.5: This version is no longer supported` a cada install. Não existe 9.x suportado para onde migrar — é a última da linha. Ou seja, o projeto está numa linha sem suporte por dependência de terceiros, e não por escolha própria; a frase anterior desta seção, de que `^9.39.5` seria "o estado correto, não um atraso", subestimava isso.
+
 **Tailwind fica em 3.4.19.** A v4 é uma migração de arquitetura, não um bump: CSS-first, sem `tailwind.config.ts`, com `@import "tailwindcss"` no lugar das diretivas `@tailwind` e `@tailwindcss/postcss` no lugar do plugin atual. Fazer isso na mesma change que troca o bundler eliminaria a atribuição de causa — uma divergência visual passaria a ter duas explicações possíveis, e o teste de paridade perderia o sentido.
 
 Alternativa considerada para os três: subir tudo de uma vez e resolver o que quebrar. Rejeitada pelo mesmo princípio que motiva o teste de paridade — o valor desta change está em que qualquer regressão tenha causa única e identificável.
@@ -127,7 +131,7 @@ O que o projeto de fato não tem é portão automatizado: não há CI, e com o `
 
 **Tailwind 3 em manutenção (`v3-lts`)** → Dívida assumida conscientemente. Não tem prazo forçado como o React 18 tinha, mas cresce. Deve virar change própria, com o teste de paridade desta change já disponível para sustentá-la.
 
-**ESLint 10 indisponível na prática** → Fora do controle do projeto: depende de `eslint-plugin-react`, `jsx-a11y` e `import` publicarem suporte. Revisitar quando o `eslint-config-next` subir esses tetos; até lá, `^9.39.5` é o estado correto, não um atraso.
+**ESLint 10 indisponível na prática, e a linha 9 sem suporte** → Fora do controle do projeto: depende de `eslint-plugin-react`, `jsx-a11y` e `import` publicarem suporte. Enquanto isso o projeto roda o `9.39.5`, última da linha e marcada como deprecada pelo próprio ESLint, com aviso a cada `npm install`. É dívida ativa, não estado estável: revisitar quando o `eslint-config-next` subir esses tetos, e tratar o aviso como lembrete, não como ruído a ignorar.
 
 **`react-feather` sem publicação desde 2022-05-30** → Fora de escopo aqui. Funciona com React 19, verificado no código publicado. O range `>=16.8.6` é aberto, então o npm nunca vai sinalizar uma quebra futura. São 10 ícones em 6 arquivos, todos SVG estático — a substituição é barata quando for necessária.
 
