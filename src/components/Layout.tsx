@@ -18,7 +18,10 @@ export function Layout({ children }: LayoutProps) {
 
   const toggleTheme = () => (currentTheme === 'dark' ? setTheme('light') : setTheme('dark'))
 
+  // Guard de hidratação do next-themes: o tema só é conhecível no cliente, então
+  // o primeiro render precisa sair vazio para não divergir do HTML do servidor.
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
   }, [])
 
