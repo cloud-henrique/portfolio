@@ -8,12 +8,23 @@ context: |
   Portfolio/site pessoal de Cláudio Henrique — single-page estático, sem backend.
 
   Stack:
-  - Next.js 15.5.9 (App Router), React 18.3.1, TypeScript 5.8.3
-  - Tailwind CSS 3.4.17 (dark mode via class), next-themes 0.4.6
-  - @headlessui/react 2.2.9, react-feather 2.0.10
-  - ESLint 9 rodando via `next lint` com `.eslintrc.json` legado (NÃO flat config)
+  - Next.js 16.3.5 (App Router, Turbopack por padrão), React 19.3.0,
+    TypeScript 5.9.3
+  - Tailwind CSS 3.4.19 (dark mode via class), next-themes 0.4.6
+  - @headlessui/react 2.2.10, react-feather 2.0.10
+  - ESLint 9.39.5 via ESLint CLI com `eslint.config.mjs` (flat config)
   - Deploy automático na Vercel a partir de main (projeto `portfolio`,
     team `cludio-henriques-projects`); domínio www.claudiohenrique.dev.br
+
+  Tetos de versão decididos, com evidência em
+  openspec/changes/archive/2026-09-16-upgrade-nextjs-16/design.md:
+  - `typescript` fica na linha 5.9: `typescript-eslint` declara peer `<6.1.0`.
+  - `eslint` fica em `^9`: o 10 só instala forçando peer override em três
+    plugins transitivos do `eslint-config-next`. O 9.39.5 é a última da linha
+    e está fora de suporte — dívida ativa, sem destino disponível hoje.
+  - `tailwindcss` fica na linha 3.4: a v4 é migração de arquitetura (CSS-first),
+    não bump. A linha 3 está em manutenção (`v3-lts`) — dívida que cresce.
+  - `@types/node` acompanha o runtime, na linha 22.
 
   Arquitetura:
   - Sem API routes e sem rotas dinâmicas. Rotas geradas: /, /_not-found,
@@ -28,10 +39,15 @@ context: |
     src/components/*.tsx (layout) e src/components/index.tsx (barrel).
 
   Validação obrigatória antes de finalizar qualquer alteração relevante:
-  `rtk proxy npm run lint`, depois `npm run type-check`, depois `npm run build`.
-  O lint roda sempre via `rtk proxy` — o hook do rtk reescreve `npm run lint`,
-  chama o ESLint direto e falha com "couldn't find an eslint.config.(js|mjs|cjs)",
-  porque o projeto usa `.eslintrc.json` legado e o ESLint 9 só lê flat config.
+  `npm run lint`, depois `npm run type-check`, depois `npm run build`.
+  As três precisam ser executadas explicitamente: a partir do Next.js 16 o
+  `next build` não roda mais ESLint, e o projeto não tem CI, então essa
+  sequência é a única verificação que existe.
+
+  Paridade da saída: `scripts/build-parity.sh capture|compare <arquivo>` extrai
+  do build `canonical`, `og:url`, `og:image`, `sitemap.xml` e `robots.txt` e
+  compara contra uma referência. Usar em qualquer mudança de framework,
+  bundler ou metadata.
 
   Restrições de conteúdo e visual:
   - Conteúdo todo em pt-BR; tom profissional, direto, sóbrio.
