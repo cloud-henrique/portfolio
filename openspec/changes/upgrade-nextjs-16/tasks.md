@@ -52,4 +52,4 @@ Esta seção vem antes do React 19 e antes de qualquer `lint:fix`: o config gera
 
 - [x] 8.1 Rodar a sequência completa de validação (`npm run lint`, `npm run type-check`, `npm run build`) e verificar que as três passam em sequência limpa
 - [x] 8.2 Abrir PR e verificar no preview da Vercel que o build remoto passa sob Turbopack e que as quatro rotas respondem — primeiro ambiente fora do local onde o Turbopack roda
-- [ ] 8.3 Confirmar no preview que `https://www.claudiohenrique.dev.br` segue como canônico no HTML servido, e só então fazer merge em `main`, ciente de que o merge dispara deploy automático de produção
+- [x] 8.3 Confirmar no preview que `https://www.claudiohenrique.dev.br` segue como canônico no HTML servido, e só então fazer merge em `main`, ciente de que o merge dispara deploy automático de produção
